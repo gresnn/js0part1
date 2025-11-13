@@ -1,0 +1,394 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Доходы</title>
+    <link rel="stylesheet" href="src/css/bootstrap.css">
+    <link rel="stylesheet" href="src/css/sidebars.css">
+    <link rel="stylesheet" href="src/css/my-style.css">
+</head>
+<body>
+<!--<h5 class="text-center mt-2 p-3 bg-body-tertiary rounded-3">Создание проекта с нуля на JS. Этап 1</h5>-->
+<!--<main class="d-flex">-->
+<div class="container-fluid" style="max-width: 1440px;">
+    <div class="row">
+        <!--<main class="d-flex  flex-nowrap">-->
+        <div class="container my-sidebar col-3 pe-0 h-100">
+            <div class="main-sidebar d-flex flex-column flex-shrink-0 p-3 bg-body-tertiary border-secondary border-end">
+                <!--           <div  class="brand-link "  style="width: 100px; margin: 0 auto;">-->
+                <a href="javascript:void(0)" class="brand-link " style="margin: 20px auto;">
+                    <img src="src/images/logo-js0.png" alt="Logo" class="brand-image">
+                </a>
+                <!--            </div>-->
+                <hr>
+                <!--            <div class="d-flex flex-column justify-content-between">-->
+                <!--                <div>-->
+                <ul class="nav nav-pills flex-column mb-auto">
+                    <li class="nav-item">
+                        <a href="index.html" class="nav-link link-body-emphasis" aria-current="page">
+                            <svg class="bi pe-none me-2" width="15" height="14" viewBox="0 0 15 14" fill="none"
+                                 xmlns="http://www.w3.org/2000/svg">
+                                <path fill-rule="evenodd" clip-rule="evenodd"
+                                      d="M1.5 12.3964V5.89644H2.5V12.3964C2.5 12.6726 2.72386 12.8964 3 12.8964H12C12.2761 12.8964 12.5 12.6726 12.5 12.3964V5.89644H13.5V12.3964C13.5 13.2249 12.8284 13.8964 12 13.8964H3C2.17157 13.8964 1.5 13.2249 1.5 12.3964Z"
+                                      fill="black"/>
+                                <path fill-rule="evenodd" clip-rule="evenodd"
+                                      d="M12.5 1.39644V4.89644L10.5 2.89644V1.39644C10.5 1.1203 10.7239 0.89644 11 0.89644H12C12.2761 0.89644 12.5 1.1203 12.5 1.39644Z"
+                                      fill="black"/>
+                                <path fill-rule="evenodd" clip-rule="evenodd"
+                                      d="M6.79289 0.39644C7.18342 0.00591397 7.81658 0.00591606 8.20711 0.39644L14.8536 7.04289C15.0488 7.23815 15.0488 7.55473 14.8536 7.74999C14.6583 7.94526 14.3417 7.94526 14.1464 7.74999L7.5 1.10355L0.853553 7.74999C0.658291 7.94526 0.341709 7.94526 0.146447 7.74999C-0.0488155 7.55473 -0.0488155 7.23815 0.146447 7.04289L6.79289 0.39644Z"
+                                      fill="black"/>
+                                <use xlink:href="javascript:void(0)"></use>
+                            </svg>
+                            Главная
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="all-items.html" class="nav-link link-body-emphasis">
+                            <svg class="bi pe-none me-2" width="16" height="16" viewBox="0 0 16 16" fill="none"
+                                 xmlns="http://www.w3.org/2000/svg">
+                                <path fill-rule="evenodd" clip-rule="evenodd"
+                                      d="M11 15C13.2091 15 15 13.2091 15 11C15 8.79086 13.2091 7 11 7C8.79086 7 7 8.79086 7 11C7 13.2091 8.79086 15 11 15ZM16 11C16 13.7614 13.7614 16 11 16C8.23858 16 6 13.7614 6 11C6 8.23858 8.23858 6 11 6C13.7614 6 16 8.23858 16 11Z"
+                                      fill="#052C65"/>
+                                <path d="M9.4375 11.9444C9.48519 12.5403 9.95568 13.0049 10.8013 13.0599V13.5H11.1764V13.0568C12.0507 12.9957 12.5625 12.5281 12.5625 11.8496C12.5625 11.2323 12.1715 10.9144 11.4721 10.7494L11.1764 10.6791V9.48105C11.5516 9.52384 11.79 9.72861 11.8472 10.0128H12.5053C12.4576 9.43826 11.9648 8.989 11.1764 8.9401V8.5H10.8013V8.94927C10.0542 9.02262 9.54559 9.47188 9.54559 10.1076C9.54559 10.6699 9.92389 11.0275 10.5533 11.1742L10.8013 11.2353V12.5067C10.4166 12.4487 10.1623 12.2378 10.1051 11.9444H9.4375ZM10.7981 10.5905C10.4294 10.5049 10.2291 10.3307 10.2291 10.0678C10.2291 9.77445 10.4453 9.5544 10.8013 9.49022V10.5905H10.7981ZM11.2305 11.3362C11.6787 11.4401 11.8854 11.6082 11.8854 11.9046C11.8854 12.2439 11.6279 12.4762 11.1764 12.5189V11.324L11.2305 11.3362Z"
+                                      fill="#052C65"/>
+                                <path d="M1 0C0.447715 0 0 0.447716 0 1V9C0 9.55229 0.447715 10 1 10H5.08296C5.1407 9.65585 5.22773 9.32163 5.34141 9H3C3 7.89543 2.10457 7 1 7V3C2.10457 3 3 2.10457 3 1H13C13 2.10457 13.8954 3 15 3V6.52779C15.3801 6.86799 15.7166 7.25594 16 7.68221V1C16 0.447715 15.5523 0 15 0H1Z"
+                                      fill="#052C65"/>
+                                <path d="M9.9983 5.08325C9.99943 5.05564 10 5.02789 10 5C10 3.89543 9.10457 3 8 3C6.89543 3 6 3.89543 6 5C6 5.6845 6.34387 6.28869 6.86829 6.64924C7.71486 5.84504 8.79591 5.28533 9.9983 5.08325Z"
+                                      fill="#052C65"/>
+                                <use xlink:href="javascript:void(0)"></use>
+                            </svg>
+                            Доходы & Расходы
+                        </a>
+                    </li>
+                    <li class="nav-item dropdown" data-bs-theme="light">
+                        <button style="width: 100%;" class="btn text-start" type="button" id="ButtonLight"
+                                data-bs-toggle="dropdown" aria-expanded="false">
+                            <!--                    <button style="width: 248px;" class="btn btn-primary dropdown-toggle text-start" type="button" id="ButtonLight" data-bs-toggle="dropdown" aria-expanded="false">-->
+
+                            <div class="d-flex justify-content-between align-items-center">
+
+                                <div class="d-flex align-items-center">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" fill="currentColor"
+                                         class="bi bi-card-list ms-1" viewBox="0 0 16 16">
+                                        <path d="M14.5 3a.5.5 0 0 1 .5.5v9a.5.5 0 0 1-.5.5h-13a.5.5 0 0 1-.5-.5v-9a.5.5 0 0 1 .5-.5zm-13-1A1.5 1.5 0 0 0 0 3.5v9A1.5 1.5 0 0 0 1.5 14h13a1.5 1.5 0 0 0 1.5-1.5v-9A1.5 1.5 0 0 0 14.5 2z"/>
+                                        <path d="M5 8a.5.5 0 0 1 .5-.5h7a.5.5 0 0 1 0 1h-7A.5.5 0 0 1 5 8m0-2.5a.5.5 0 0 1 .5-.5h7a.5.5 0 0 1 0 1h-7a.5.5 0 0 1-.5-.5m0 5a.5.5 0 0 1 .5-.5h7a.5.5 0 0 1 0 1h-7a.5.5 0 0 1-.5-.5m-1-5a.5.5 0 1 1-1 0 .5.5 0 0 1 1 0M4 8a.5.5 0 1 1-1 0 .5.5 0 0 1 1 0m0 2.5a.5.5 0 1 1-1 0 .5.5 0 0 1 1 0"/>
+                                    </svg>
+                                    <div class="ms-2">Категории</div>
+                                </div>
+                                <svg width="20px" height="20px" viewBox="0 0 16 16" xmlns="http://www.w3.org/2000/svg"
+                                     fill="#000000" class="bi bi-chevron-right">
+                                    <path fill-rule="evenodd"
+                                          d="M4.646 1.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1 0 .708l-6 6a.5.5 0 0 1-.708-.708L10.293 8 4.646 2.354a.5.5 0 0 1 0-.708z"/>
+                                </svg>
+                            </div>
+
+                        </button>
+                        <ul class="dropdown-menu w-100 shadow" aria-labelledby="dropdownMenuButtonLight">
+                            <!--                    <ul class="dropdown-menu w-100 shadow">-->
+                            <li><a class="dropdown-item active" href="income.html">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                                     class="bi bi-arrow-up-square me-2" viewBox="0 0 16 16">
+                                    <path fill-rule="evenodd"
+                                          d="M15 2a1 1 0 0 0-1-1H2a1 1 0 0 0-1 1v12a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1zM0 2a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v12a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2zm8.5 9.5a.5.5 0 0 1-1 0V5.707L5.354 7.854a.5.5 0 1 1-.708-.708l3-3a.5.5 0 0 1 .708 0l3 3a.5.5 0 0 1-.708.708L8.5 5.707z"/>
+                                </svg>
+                                Доходы</a></li>
+                            <li><a class="dropdown-item" href="outcome.html">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                                     class="bi bi-arrow-down-square me-2" viewBox="0 0 16 16">
+                                    <path fill-rule="evenodd"
+                                          d="M15 2a1 1 0 0 0-1-1H2a1 1 0 0 0-1 1v12a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1zM0 2a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v12a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2zm8.5 2.5a.5.5 0 0 0-1 0v5.793L5.354 8.146a.5.5 0 1 0-.708.708l3 3a.5.5 0 0 0 .708 0l3-3a.5.5 0 0 0-.708-.708L8.5 10.293z"/>
+                                </svg>
+                                Расходы</a></li>
+                            <!--                        <li><a class="dropdown-item" href="#">Расходы2</a></li>-->
+                        </ul>
+
+                    </li>
+                </ul>
+
+                <!--                </div>-->
+                <div>Баланс: <span class="ms-2">500 $</span></div>
+
+                <!--            </div>-->
+                <hr>
+                <div class="nav-item dropdown" data-bs-theme="light">
+                    <div class="d-flex align-items-center link-body-emphasis text-decoration-none"
+                         data-bs-toggle="dropdown" aria-expanded="false">
+                        <img src="src/images/group1.png" alt="" width="32" height="32" class="rounded-circle me-2">
+                        <strong>Roman Chernov</strong>
+                    </div>
+                    <ul class="dropdown-menu w-100 shadow" aria-labelledby="dropdownMenuButtonLight">
+                        <!--                    <ul class="dropdown-menu w-100 shadow">-->
+                        <li><a class="dropdown-item" href="sing-in.html">LogIn</a></li>
+                        <li><a class="dropdown-item" href="sign-up.html">SignUp</a></li>
+                        <!--                        <li><a class="dropdown-item" href="#">Расходы2</a></li>-->
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="container col-12 col-xl-9 d-flex flex-column bg-body-tertiary h-100">
+            <div class="h3 ms-2 py-5 my-sidebar">Доходы</div>
+
+            <div class="mobile-logo ">
+                <div class="text-center p-3">
+                    <a href="javascript:void(0)" class="brand-link" style="margin: 20px auto;">
+                        <img src="src/images/logo-js0.png" alt="Logo" class="brand-image">
+                    </a>
+                </div>
+                <!--                            <div class="h3 ms-5 mt-3 text-center">Создание дохода/расхода</div>-->
+            </div>
+            <div class="mobile-menu mb-0">
+                <div class="btn-group-vertical btn-group-sm text-center" role="group"
+                     aria-label="Меню-бургер">
+                    <div class="btn-group btn-group-sm" style="width: 160px" role="group">
+                        <button type="button" class="btn btn-outline-secondary dropdown-toggle" style="width: 160px"
+                                data-bs-toggle="dropdown" aria-expanded="false" id="fade">
+                            Меню
+                        </button>
+
+
+                        <ul class="dropdown-menu">
+                            <!--                <button class="btn btn-sm btn-outline-secondary mx-2 px-3 mb-1 ms-4 w-75" type="button">Сегодня</button>-->
+                            <!--                <a href="#" class="btn btn-sm btn-outline-secondary mx-2 px-3 mb-1 ms-4 w-75" role="button">Link-->
+                            <!--                    Button</a>-->
+                            <li class="nav-item">
+                                <a href="index.html" class="btn btn-sm btn-outline-secondary mx-2 px-3 mb-1 ms-4 w-75"
+                                   aria-current="page">
+                                    <svg class="bi pe-none me-2" width="15" height="14" viewBox="0 0 15 14" fill="none"
+                                         xmlns="http://www.w3.org/2000/svg">
+                                        <path fill-rule="evenodd" clip-rule="evenodd"
+                                              d="M1.5 12.3964V5.89644H2.5V12.3964C2.5 12.6726 2.72386 12.8964 3 12.8964H12C12.2761 12.8964 12.5 12.6726 12.5 12.3964V5.89644H13.5V12.3964C13.5 13.2249 12.8284 13.8964 12 13.8964H3C2.17157 13.8964 1.5 13.2249 1.5 12.3964Z"
+                                              fill="black"/>
+                                        <path fill-rule="evenodd" clip-rule="evenodd"
+                                              d="M12.5 1.39644V4.89644L10.5 2.89644V1.39644C10.5 1.1203 10.7239 0.89644 11 0.89644H12C12.2761 0.89644 12.5 1.1203 12.5 1.39644Z"
+                                              fill="black"/>
+                                        <path fill-rule="evenodd" clip-rule="evenodd"
+                                              d="M6.79289 0.39644C7.18342 0.00591397 7.81658 0.00591606 8.20711 0.39644L14.8536 7.04289C15.0488 7.23815 15.0488 7.55473 14.8536 7.74999C14.6583 7.94526 14.3417 7.94526 14.1464 7.74999L7.5 1.10355L0.853553 7.74999C0.658291 7.94526 0.341709 7.94526 0.146447 7.74999C-0.0488155 7.55473 -0.0488155 7.23815 0.146447 7.04289L6.79289 0.39644Z"
+                                              fill="black"/>
+                                        <use xlink:href="javascript:void(0)"></use>
+                                    </svg>
+                                    Главная
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="all-items.html"
+                                   class="btn btn-sm btn-outline-secondary mx-2 px-3 mb-1 ms-4 w-75">
+                                    <svg class="bi pe-none me-2" width="16" height="16" viewBox="0 0 16 16" fill="none"
+                                         xmlns="http://www.w3.org/2000/svg">
+                                        <path fill-rule="evenodd" clip-rule="evenodd"
+                                              d="M11 15C13.2091 15 15 13.2091 15 11C15 8.79086 13.2091 7 11 7C8.79086 7 7 8.79086 7 11C7 13.2091 8.79086 15 11 15ZM16 11C16 13.7614 13.7614 16 11 16C8.23858 16 6 13.7614 6 11C6 8.23858 8.23858 6 11 6C13.7614 6 16 8.23858 16 11Z"
+                                              fill="#052C65"/>
+                                        <path d="M9.4375 11.9444C9.48519 12.5403 9.95568 13.0049 10.8013 13.0599V13.5H11.1764V13.0568C12.0507 12.9957 12.5625 12.5281 12.5625 11.8496C12.5625 11.2323 12.1715 10.9144 11.4721 10.7494L11.1764 10.6791V9.48105C11.5516 9.52384 11.79 9.72861 11.8472 10.0128H12.5053C12.4576 9.43826 11.9648 8.989 11.1764 8.9401V8.5H10.8013V8.94927C10.0542 9.02262 9.54559 9.47188 9.54559 10.1076C9.54559 10.6699 9.92389 11.0275 10.5533 11.1742L10.8013 11.2353V12.5067C10.4166 12.4487 10.1623 12.2378 10.1051 11.9444H9.4375ZM10.7981 10.5905C10.4294 10.5049 10.2291 10.3307 10.2291 10.0678C10.2291 9.77445 10.4453 9.5544 10.8013 9.49022V10.5905H10.7981ZM11.2305 11.3362C11.6787 11.4401 11.8854 11.6082 11.8854 11.9046C11.8854 12.2439 11.6279 12.4762 11.1764 12.5189V11.324L11.2305 11.3362Z"
+                                              fill="#052C65"/>
+                                        <path d="M1 0C0.447715 0 0 0.447716 0 1V9C0 9.55229 0.447715 10 1 10H5.08296C5.1407 9.65585 5.22773 9.32163 5.34141 9H3C3 7.89543 2.10457 7 1 7V3C2.10457 3 3 2.10457 3 1H13C13 2.10457 13.8954 3 15 3V6.52779C15.3801 6.86799 15.7166 7.25594 16 7.68221V1C16 0.447715 15.5523 0 15 0H1Z"
+                                              fill="#052C65"/>
+                                        <path d="M9.9983 5.08325C9.99943 5.05564 10 5.02789 10 5C10 3.89543 9.10457 3 8 3C6.89543 3 6 3.89543 6 5C6 5.6845 6.34387 6.28869 6.86829 6.64924C7.71486 5.84504 8.79591 5.28533 9.9983 5.08325Z"
+                                              fill="#052C65"/>
+                                        <use xlink:href="javascript:void(0)"></use>
+                                    </svg>
+                                    Доходы & Расходы
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="income.html" class="btn btn-sm btn-outline-secondary mx-2 px-3 mb-1 ms-4 w-75">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                                         class="bi bi-arrow-up-square me-2" viewBox="0 0 16 16">
+                                        <path fill-rule="evenodd"
+                                              d="M15 2a1 1 0 0 0-1-1H2a1 1 0 0 0-1 1v12a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1zM0 2a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v12a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2zm8.5 9.5a.5.5 0 0 1-1 0V5.707L5.354 7.854a.5.5 0 1 1-.708-.708l3-3a.5.5 0 0 1 .708 0l3 3a.5.5 0 0 1-.708.708L8.5 5.707z"/>
+                                    </svg>
+                                    Доходы</a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="outcome.html"
+                                   class="btn btn-sm btn-outline-secondary mx-2 px-3 mb-1 ms-4 w-75">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                                         class="bi bi-arrow-down-square me-2" viewBox="0 0 16 16">
+                                        <path fill-rule="evenodd"
+                                              d="M15 2a1 1 0 0 0-1-1H2a1 1 0 0 0-1 1v12a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1zM0 2a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v12a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2zm8.5 2.5a.5.5 0 0 0-1 0v5.793L5.354 8.146a.5.5 0 1 0-.708.708l3 3a.5.5 0 0 0 .708 0l3-3a.5.5 0 0 0-.708-.708L8.5 10.293z"/>
+                                    </svg>
+                                    Расходы</a>
+                            </li>
+
+
+                            <!--            </div>-->
+                            <hr>
+                            <div class="d-flex justify-content-center text-center align-items-center mb-2 text-decoration-none"
+                                 data-bs-toggle="dropdown" aria-expanded="false">
+                                <img src="src/images/group1.png" alt="" width="20" height="20"
+                                     class="rounded-circle me-1">
+                                <strong>Roman Chernov</strong>
+                            </div>
+                            <li class="nav-item"><a class="btn btn-sm btn-outline-secondary mx-2 px-3 mb-1 ms-4 w-75"
+                                                    href="sing-in.html">LogIn</a></li>
+                            <li class="nav-item"><a class="btn btn-sm btn-outline-secondary mx-2 px-3 mb-1 ms-4 w-75"
+                                                    href="sign-up.html">SignUp</a></li>
+
+                            <div class="d-flex justify-content-center">Баланс: <span class="ms-20">500 $</span></div>
+                        </ul>
+                    </div>
+                </div>
+                <!--                <div class="text-center mobile-menu">-->
+                <!--                    <a href="javascript:void(0)" class="brand-link" style="margin: 20px auto;">-->
+                <!--                        <img src="src/images/logo-js0.png" alt="Logo" class="brand-image">-->
+                <!--                    </a>-->
+                <!--                </div>-->
+                <div class="btn-group-vertical btn-group-sm text-center" role="group"
+                     aria-label="Кнопки периодов">
+
+                    <div class="btn-group btn-group-sm" style="width: 160px" role="group">
+                        <button type="button" class="btn btn-outline-secondary dropdown-toggle"
+                                data-bs-toggle="dropdown" aria-expanded="false">
+                            Период
+                        </button>
+                        <ul class="dropdown-menu">
+                            <button class="btn btn-sm btn-outline-secondary mx-2 px-3 mb-1 ms-4 w-75" type="button">
+                                Сегодня
+                            </button>
+                            <button class="btn btn-sm btn-outline-secondary mx-2 px-3 mb-1 ms-4 w-75" type="button">
+                                Неделя
+                            </button>
+                            <button class="btn btn-sm btn-outline-secondary mx-2 px-3 mb-1 ms-4 w-75" type="button">
+                                Месяц
+                            </button>
+                            <button class="btn btn-sm btn-outline-secondary mx-2 px-3 mb-1 ms-4 w-75" type="button">Год
+                            </button>
+                            <button class="btn btn-sm btn-outline-secondary mx-2 px-3 mb-1 ms-4 w-75" type="button">Все
+                            </button>
+                            <button class="btn btn-sm btn-outline-secondary mx-2 px-3 mb-1 ms-4 w-75" type="button">
+                                Интервал
+                            </button>
+                            <button class="btn btn-sm d-flex btn-outline-secondary mx-2 px-3 mb-1 ms-4 w-75"
+                                    type="button">
+                                <div class="ms-1 me-3">c</div>
+                                Дата
+                            </button>
+                            <button class="btn btn-sm d-flex btn-outline-secondary mx-2 px-3 mb-1 ms-4  w-75"
+                                    type="button">
+                                <div class="ms-1 me-3">по</div>
+                                Дата
+                            </button>
+                            <!--                <li><a class="dropdown-item" href="#">Сегодня</a></li>-->
+                            <!--                <li><a class="dropdown-item" href="#">Неделя</a></li>-->
+                            <!--                <li><a class="dropdown-item" href="#">Месяц</a></li>-->
+                            <!--                <li><a class="dropdown-item" href="#">Год</a></li>-->
+                            <!--                <li><a class="dropdown-item" href="#">Все</a></li>-->
+                            <!--                <li><a class="dropdown-item" href="#">Интервал</a></li>-->
+                            <!--                <li><a class="dropdown-item" href="#">С Дата</a></li>-->
+                            <!--                <li><a class="dropdown-item" href="#">ПО Дата</a></li>-->
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <div class="row mt-0">
+                <div class="mobile-title h5 mt-0 mb-3 text-center">Доходы</div>
+                <div class="col-sm-6 col-xl-4 mb-3">
+                    <div class="card h-100">
+                        <div class="card-body">
+                            <h4 class="card-title" style="color: #290661">Депозиты</h4>
+                            <a href="edit-income.html" class="btn btn-primary">Редактировать</a>
+                            <a href="#" class="btn btn-danger" data-bs-toggle="modal" data-bs-target="#staticBackdrop">Удалить</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-sm-6 col-xl-4 mb-3">
+                    <div class="card h-100">
+                        <div class="card-body">
+                            <h4 class="card-title" style="color: #290661">Зарплата</h4>
+                            <a href="edit-income.html" class="btn btn-primary">Редактировать</a>
+                            <a href="#" class="btn btn-danger" data-bs-toggle="modal" data-bs-target="#staticBackdrop">Удалить</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-sm-6 col-xl-4 mb-3">
+                    <div class="card h-100">
+                        <div class="card-body">
+                            <h4 class="card-title" style="color: #290661">Сбережения</h4>
+                            <a href="edit-income.html" class="btn btn-primary">Редактировать</a>
+                            <a href="#" class="btn btn-danger" data-bs-toggle="modal" data-bs-target="#staticBackdrop">Удалить</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-sm-6 col-xl-4 mb-3">
+                    <div class="card h-100">
+                        <div class="card-body">
+                            <h4 class="card-title" style="color: #290661">Инвестиции</h4>
+                            <a href="edit-income.html" class="btn btn-primary">Редактировать</a>
+                            <a href="#" class="btn btn-danger" data-bs-toggle="modal" data-bs-target="#staticBackdrop">Удалить</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-sm-6 col-xl-4 mb-3">
+                    <div class="card text-center h-100">
+                        <div class="card-body d-flex justify-content-center align-items-center">
+                            <a href="make-income.html" class="p-3 p-xl-0 text-secondary text-decoration-none">
+                                <p class="h2">+</p>
+                            </a>
+
+                        </div>
+                    </div>
+                </div>
+
+
+            </div>
+            <!--</main>-->
+        </div>
+    </div>
+
+
+    <!-- Кнопка-триггер модального окна -->
+    <!--    <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#staticBackdrop">-->
+    <!--        Запустить модальное окно со статическим фоном-->
+    <!--    </button>-->
+
+    <!-- Модальное окно -->
+    <div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1"
+         aria-labelledby="staticBackdropLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content text-center">
+                <!--
+                <div class="modal-header">
+                    <h1 class="modal-title fs-5" id="staticBackdropLabel">Заголовок модального окна</h1>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Закрыть"></button>
+                </div>
+                -->
+                <div class="modal-body my-modal mt-2">
+                    Вы действительно хотите удалить категорию? Связанные доходы будут удалены навсегда.
+                </div>
+                <!--                <div class="modal-footer">-->
+                <div class="modal-body mb-2">
+                    <button type="button" class="btn btn-success" data-bs-dismiss="modal">Да, удалить</button>
+                    <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Не удалять</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+</div>
+
+<script src="src/js/popper.js"></script>
+<script src="src/js/bootstrap.js"></script>
+<script src="src/js/sidebars.js"></script>
+
+</body>
+
+</html>
+
+<!--<!doctype html>-->
+<!--<html lang="ru">-->
+<!--<head>-->
+<!--    <meta charset="utf-8">-->
+<!--    <meta name="viewport" content="width=device-width, initial-scale=1">-->
+<!--    <title>Демо Bootstrap</title>-->
+<!--    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">-->
+<!--</head>-->
+<!--<body>-->
+<!--<h1>Привет мир!</h1>-->
+<!--<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz" crossorigin="anonymous"></script>-->
+<!--</body>-->
+<!--</html>-->
