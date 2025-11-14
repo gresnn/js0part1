@@ -11,33 +11,30 @@
 <body>
 <!--<h5 class="text-center mt-2 p-3 bg-body-tertiary rounded-3">Создание проекта с нуля на JS. Этап 1</h5>-->
 <!--<main class="d-flex">-->
-<div class="container-fluid" style="max-width: 1440px;">
+<div class="container-fluid ps-0 pe-0">
     <div class="row">
-        <!--<main class="d-flex  flex-nowrap">-->
         <div class="container my-sidebar col-3 pe-0">
-            <div class="main-sidebar d-flex flex-column flex-shrink-0 p-3 bg-body-tertiary border-secondary border-end">
-                <!--           <div  class="brand-link "  style="width: 100px; margin: 0 auto;">-->
-                <a href="javascript:void(0)" class="brand-link " style="margin: 20px auto;">
+
+            <div class="d-flex my-bottom-border my-border">
+                <a href="javascript:void(0)" class="brand-link" style="margin: 20px auto;">
                     <img src="src/images/logo-js0.png" alt="Logo" class="brand-image">
                 </a>
-                <!--            </div>-->
-                <hr>
-                <!--            <div class="d-flex flex-column justify-content-between">-->
-                <!--                <div>-->
-                <ul class="nav nav-pills flex-column mb-auto">
+            </div>
+            <div class="main-sidebar d-flex flex-column flex-shrink-0 my-border">
+                <ul class="nav nav-pills flex-column mb-auto pt-3 m-3">
                     <li class="nav-item">
-                        <a href="index.html" class="nav-link active" aria-current="page">
+                        <a href="index.html" class="nav-link link-body-emphasis" aria-current="page">
                             <svg class="bi pe-none me-2" width="15" height="14" viewBox="0 0 15 14" fill="none"
                                  xmlns="http://www.w3.org/2000/svg">
                                 <path fill-rule="evenodd" clip-rule="evenodd"
                                       d="M1.5 12.3964V5.89644H2.5V12.3964C2.5 12.6726 2.72386 12.8964 3 12.8964H12C12.2761 12.8964 12.5 12.6726 12.5 12.3964V5.89644H13.5V12.3964C13.5 13.2249 12.8284 13.8964 12 13.8964H3C2.17157 13.8964 1.5 13.2249 1.5 12.3964Z"
-                                      fill="white"/>
+                                      fill="black"/>
                                 <path fill-rule="evenodd" clip-rule="evenodd"
                                       d="M12.5 1.39644V4.89644L10.5 2.89644V1.39644C10.5 1.1203 10.7239 0.89644 11 0.89644H12C12.2761 0.89644 12.5 1.1203 12.5 1.39644Z"
-                                      fill="white"/>
+                                      fill="black"/>
                                 <path fill-rule="evenodd" clip-rule="evenodd"
                                       d="M6.79289 0.39644C7.18342 0.00591397 7.81658 0.00591606 8.20711 0.39644L14.8536 7.04289C15.0488 7.23815 15.0488 7.55473 14.8536 7.74999C14.6583 7.94526 14.3417 7.94526 14.1464 7.74999L7.5 1.10355L0.853553 7.74999C0.658291 7.94526 0.341709 7.94526 0.146447 7.74999C-0.0488155 7.55473 -0.0488155 7.23815 0.146447 7.04289L6.79289 0.39644Z"
-                                      fill="white"/>
+                                      fill="black"/>
                                 <use xlink:href="javascript:void(0)"></use>
                             </svg>
                             Главная
@@ -79,19 +76,14 @@
                         <ul class="dropdown-menu w-100 shadow" aria-labelledby="dropdownMenuButtonLight">
                             <!--                    <ul class="dropdown-menu w-100 shadow">-->
                             <li><a class="dropdown-item" href="income.html">Доходы</a></li>
-                            <li><a class="dropdown-item" href="#">Расходы</a></li>
+                            <li><a class="dropdown-item" href="outcome.html">Расходы</a></li>
                             <!--                        <li><a class="dropdown-item" href="#">Расходы2</a></li>-->
                         </ul>
 
                     </li>
                 </ul>
-
-                <!--                </div>-->
-                <div>Баланс: <span class="ms-2">500 $</span></div>
-
-                <!--            </div>-->
-                <hr>
-                <div class="nav-item dropdown" data-bs-theme="light">
+                <div class="p-3">Баланс: <span class="ms-2">500 $</span></div>
+                <div class="nav-item dropdown my-top-border p-3" data-bs-theme="light">
                     <div class="d-flex align-items-center link-body-emphasis text-decoration-none"
                          data-bs-toggle="dropdown" aria-expanded="false">
                         <img src="src/images/group1.png" alt="" width="32" height="32" class="rounded-circle me-2">
@@ -106,7 +98,9 @@
                 </div>
             </div>
         </div>
-        <div class="container col-12 col-xl-9 h-100 d-flex flex-column bg-body-tertiary">
+
+
+        <div class="container col-10 col-xl-9 h-100 d-flex flex-column">
             <div class="my-sidebar h3 ms-2 py-5">Создание категории доходов</div>
             <div class="mobile-logo ">
                 <div class="text-center p-3">
