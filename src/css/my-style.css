@@ -1,5 +1,6 @@
 /*body {*/
-/*    background-color: white;*/
+/*    background-color: green;*/
+/*    height: auto;*/
 /*}*/
 
 .dropdown-item:hover {
@@ -78,15 +79,15 @@
 }
 
 
-/*.my-index-container {*/
-/*    max-width: 1440px;*/
-/*}*/
+.my-index-container {
+    max-width: 1440px;
+}
 
 /*.my-sidebar {*/
 /*    display: none;*/
 /*}*/
 .my-circle-border, .my-border {
-    border-right: 1px solid #D9D9D9;
+    border-right: 2px solid #D9D9D9;
 }
 
 
@@ -131,9 +132,11 @@
         font-size: smaller;
 
     }
+
     .mobile-title {
         display: block;
     }
+
     .mobile-btn {
         width: 250px;
     }
@@ -188,6 +191,7 @@
         margin-bottom: 10px;
 
     }
+
     .logo-min {
         display: none;
     }
