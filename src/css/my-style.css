@@ -67,6 +67,18 @@
 
 }
 
+.my-left-sidebar {
+    width: 219px;
+    margin-right: 0;
+    margin-left: 0;
+}
+
+
+.my-sidebar {
+    margin-right: 0;
+    margin-left: 0;
+}
+
 .my-modal {
     color: #290661;
     font-size: 20px;
@@ -110,8 +122,11 @@
 
     .my-main-menu {
         display: none;
-        background-color: #e70a0a;
+        /*background-color: #e70a0a;*/
         color: #000000;
+        justify-content: center;
+        margin-top: 20px;
+        margin-bottom: 20px;
     }
 
     .mobile-menu {
