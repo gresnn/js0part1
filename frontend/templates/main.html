@@ -1,5 +1,4 @@
 
-            <div class=" h3 ms-2 py-5 my-sidebar">Расходы</div>
             <div class="mobile-logo ">
                 <div class="text-center p-3">
                     <a href="javascript:void(0)" class="brand-link" style="margin: 20px auto;">
@@ -8,7 +7,7 @@
                 </div>
                 <!--                            <div class="h3 ms-5 mt-3 text-center">Создание дохода/расхода</div>-->
             </div>
-            <div class="mobile-menu mb-3 mb-xl-0">
+            <div class="mobile-menu  mb-0">
                 <div class="btn-group-vertical btn-group-sm text-center" role="group"
                      aria-label="Меню-бургер">
                     <div class="btn-group btn-group-sm" style="width: 160px" role="group">
@@ -85,154 +84,143 @@
                             <hr>
                             <div class="d-flex justify-content-center text-center align-items-center mb-2 text-decoration-none"
                                  data-bs-toggle="dropdown" aria-expanded="false">
-                                <img src="../src/images/group1.png" alt="" width="20" height="20"
+                                <img src="../static/images/group1.png" alt="" width="20" height="20"
                                      class="rounded-circle me-1">
-                                <strong id="userDashboard">Roman Chernov</strong>
+                                <strong>Roman Chernov</strong>
                             </div>
                             <li class="nav-item"><a class="btn btn-sm btn-outline-secondary mx-2 px-3 mb-1 ms-4 w-75"
                                                     href="#/sing-in">LogOut</a></li>
-                            <!--                            <li class="nav-item"><a class="btn btn-sm btn-outline-secondary mx-2 px-3 mb-1 ms-4 w-75"-->
-                            <!--                                                    href="sign-up.html">SignUp</a></li>-->
+<!--                            <li class="nav-item"><a class="btn btn-sm btn-outline-secondary mx-2 px-3 mb-1 ms-4 w-75"-->
+<!--                                                    href="sign-up.html">SignUp</a></li>-->
 
                             <div class="d-flex justify-content-center">Баланс: <span class="ms-20">500 $</span></div>
                         </ul>
                     </div>
                 </div>
+                <!--                <div class="text-center mobile-menu">-->
+                <!--                    <a href="javascript:void(0)" class="brand-link" style="margin: 20px auto;">-->
+                <!--                        <img src="src/images/logo-js0.png" alt="Logo" class="brand-image">-->
+                <!--                    </a>-->
+                <!--                </div>-->
+                <div class="btn-group-vertical btn-group-sm text-center" role="group"
+                     aria-label="Кнопки периодов">
 
-
-            </div>
-            <div class="row mt-0">
-                <div class="mobile-title h5 mt-0 mb-3 text-center">Расходы</div>
-                <div class="col-md-6 col-xl-4 mb-3">
-                    <div class="card h-100">
-                        <div class="card-body">
-                            <h4 class="card-title" style="color: #290661">Еда</h4>
-                            <a href="#/edit-outcome" class="btn btn-primary">Редактировать</a>
-                            <a href="#" class="btn btn-danger" data-bs-toggle="modal" data-bs-target="#staticBackdrop">Удалить</a>
-                        </div>
+                    <div class="btn-group btn-group-sm" style="width: 160px" role="group">
+                        <button type="button" class="btn btn-outline-secondary dropdown-toggle"
+                                data-bs-toggle="dropdown" aria-expanded="false">
+                            Период
+                        </button>
+                        <ul class="dropdown-menu">
+                            <button class="btn btn-sm btn-outline-secondary mx-2 px-3 mb-1 ms-4 w-75" type="button">
+                                Сегодня
+                            </button>
+                            <button class="btn btn-sm btn-outline-secondary mx-2 px-3 mb-1 ms-4 w-75" type="button">
+                                Неделя
+                            </button>
+                            <button class="btn btn-sm btn-outline-secondary mx-2 px-3 mb-1 ms-4 w-75" type="button">
+                                Месяц
+                            </button>
+                            <button class="btn btn-sm btn-outline-secondary mx-2 px-3 mb-1 ms-4 w-75" type="button">Год
+                            </button>
+                            <button class="btn btn-sm btn-outline-secondary mx-2 px-3 mb-1 ms-4 w-75" type="button">Все
+                            </button>
+                            <button class="btn btn-sm btn-outline-secondary mx-2 px-3 mb-1 ms-4 w-75" type="button">
+                                Интервал
+                            </button>
+                            <button class="btn btn-sm d-flex btn-outline-secondary mx-2 px-3 mb-1 ms-4 w-75"
+                                    type="button">
+                                <div class="ms-1 me-3">c</div>
+                                Дата
+                            </button>
+                            <button class="btn btn-sm d-flex btn-outline-secondary mx-2 px-3 mb-1 ms-4  w-75"
+                                    type="button">
+                                <div class="ms-1 me-3">по</div>
+                                Дата
+                            </button>
+                            <!--                <li><a class="dropdown-item" href="#">Сегодня</a></li>-->
+                            <!--                <li><a class="dropdown-item" href="#">Неделя</a></li>-->
+                            <!--                <li><a class="dropdown-item" href="#">Месяц</a></li>-->
+                            <!--                <li><a class="dropdown-item" href="#">Год</a></li>-->
+                            <!--                <li><a class="dropdown-item" href="#">Все</a></li>-->
+                            <!--                <li><a class="dropdown-item" href="#">Интервал</a></li>-->
+                            <!--                <li><a class="dropdown-item" href="#">С Дата</a></li>-->
+                            <!--                <li><a class="dropdown-item" href="#">ПО Дата</a></li>-->
+                        </ul>
                     </div>
-                </div>
-
-                <div class="col-md-6 col-xl-4 mb-3">
-                    <div class="card h-100">
-                        <div class="card-body">
-                            <h4 class="card-title" style="color: #290661">Жильё</h4>
-                            <a href="#/edit-outcome" class="btn btn-primary">Редактировать</a>
-                            <a href="#" class="btn btn-danger" data-bs-toggle="modal" data-bs-target="#staticBackdrop">Удалить</a>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="col-md-6 col-xl-4 mb-3">
-                    <div class="card h-100">
-                        <div class="card-body">
-                            <h4 class="card-title" style="color: #290661">Здоровье</h4>
-                            <a href="#/edit-outcome" class="btn btn-primary">Редактировать</a>
-                            <a href="#" class="btn btn-danger" data-bs-toggle="modal" data-bs-target="#staticBackdrop">Удалить</a>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="col-md-6 col-xl-4 mb-3">
-                    <div class="card h-100">
-                        <div class="card-body">
-                            <h4 class="card-title" style="color: #290661">Кафе</h4>
-                            <a href="#/edit-outcome" class="btn btn-primary">Редактировать</a>
-                            <a href="#" class="btn btn-danger" data-bs-toggle="modal" data-bs-target="#staticBackdrop">Удалить</a>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="col-md-6 col-xl-4 mb-3">
-                    <div class="card h-100">
-                        <div class="card-body">
-                            <h4 class="card-title" style="color: #290661">Авто</h4>
-                            <a href="#/edit-outcome" class="btn btn-primary">Редактировать</a>
-                            <a href="#" class="btn btn-danger" data-bs-toggle="modal" data-bs-target="#staticBackdrop">Удалить</a>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="col-md-6 col-xl-4 mb-3">
-                    <div class="card h-100">
-                        <div class="card-body">
-                            <h4 class="card-title" style="color: #290661">Одежда</h4>
-                            <a href="#/edit-outcome" class="btn btn-primary">Редактировать</a>
-                            <a href="#" class="btn btn-danger" data-bs-toggle="modal" data-bs-target="#staticBackdrop">Удалить</a>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="col-md-6 col-xl-4 mb-3">
-                    <div class="card h-100">
-                        <div class="card-body">
-                            <h4 class="card-title" style="color: #290661">Развлечения</h4>
-                            <a href="#/edit-outcome" class="btn btn-primary">Редактировать</a>
-                            <a href="#" class="btn btn-danger" data-bs-toggle="modal" data-bs-target="#staticBackdrop">Удалить</a>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="col-md-6 col-xl-4 mb-3">
-                    <div class="card h-100">
-                        <div class="card-body">
-                            <h4 class="card-title" style="color: #290661">Счета</h4>
-                            <a href="#/edit-outcome" class="btn btn-primary">Редактировать</a>
-                            <a href="#" class="btn btn-danger" data-bs-toggle="modal" data-bs-target="#staticBackdrop">Удалить</a>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="col-md-6 col-xl-4 mb-3">
-                    <div class="card h-100">
-                        <div class="card-body">
-                            <h4 class="card-title" style="color: #290661">Спорт</h4>
-                            <a href="#/edit-outcome" class="btn btn-primary">Редактировать</a>
-                            <a href="#" class="btn btn-danger" data-bs-toggle="modal" data-bs-target="#staticBackdrop">Удалить</a>
-                        </div>
-                    </div>
-                </div>
-
-
-                <div class="col-md-6 col-xl-4 mb-3">
-                    <div class="card text-center h-100">
-                        <div class="card-body d-flex justify-content-center align-items-center">
-                            <a href="#/make-outcome" class="p-3 p-xl-0 text-secondary text-decoration-none">
-                                <p class="h2">+</p>
-                            </a>
-
-                        </div>
-                    </div>
-                </div>
-
-
-            </div>
-
-
-    <!-- Кнопка-триггер модального окна -->
-    <!--    <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#staticBackdrop">-->
-    <!--        Запустить модальное окно со статическим фоном-->
-    <!--    </button>-->
-
-    <!-- Модальное окно -->
-    <div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1"
-         aria-labelledby="staticBackdropLabel" aria-hidden="true">
-        <div class="modal-dialog modal-dialog-centered">
-            <div class="modal-content text-center">
-                <!--
-                <div class="modal-header">
-                    <h1 class="modal-title fs-5" id="staticBackdropLabel">Заголовок модального окна</h1>
-                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Закрыть"></button>
-                </div>
-                -->
-                <div class="modal-body my-modal mt-2">
-                    Вы действительно хотите удалить категорию? Связанные доходы будут удалены навсегда.
-                </div>
-                <!--                <div class="modal-footer">-->
-                <div class="modal-body mb-2">
-                    <button type="button" class="btn btn-success" data-bs-dismiss="modal">Да, удалить</button>
-                    <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Не удалять</button>
                 </div>
             </div>
-        </div>
-    </div>
+            <div class="mobile-title h5 mt-2 mt-sm-1 mb-3 mb-sm-1 text-center">Главная страница</div>
+            <div class="container-md my-main-menu">
+                <div class="h3 ms-3 py-5 my-sidebar">Главная</div>
+                <div class="d-flex flex-row gap-0 gap-xl-2 ms-2" id="main-menu">
+
+                    <button class="btn btn-outline-secondary mx-2 px-3 btn-secondary mb-1" type="button"
+                            style="color: white">
+                        Сегодня
+                    </button>
+                    <button class="btn btn-outline-secondary mx-2 px-3 mb-1" type="button">Неделя</button>
+                    <button class="btn btn-outline-secondary mx-2 px-3 mb-1" type="button">Месяц</button>
+
+
+                    <button class="btn btn-outline-secondary mx-2 px-3 mb-1" type="button">Год</button>
+                    <button class="btn btn-outline-secondary mx-2 px-3 mb-1" type="button">Все</button>
+
+
+                    <button class="btn btn-outline-secondary mx-2 px-3 mb-1" type="button">Интервал</button>
+
+                    <button class="btn d-flex btn-outline-secondary mx-2 px-3 mb-1" type="button">
+                        <div class="ms-1 me-3">c</div>
+                        Дата
+                    </button>
+                    <button class="btn d-flex btn-outline-secondary mx-2 px-3 mb-1" type="button">
+                        <div class="ms-1 me-3">по</div>
+                        Дата
+                    </button>
+
+                </div>
+            </div>
+            <div class="d-flex flex-xl-row flex-column align-content-center row mt-1 mt-sm-3 mt-xl-5 ms-xl-3 justify-content-between">
+                <!--        <div class="row">-->
+                <div class="col-6 my-circle-border">
+
+                    <div class="container col-6 text-center"><strong>Доходы</strong></div>
+                    <div class="d-flex gap-2 py-2 text-center justify-content-center align-items-center">
+                        <div style="width: 35px; height: 10px; background-color: #FF0000;"></div>
+                        <div class="ms-1" style="font-size:  12px; font-weight: bold;">Red</div>
+                        <div style="width: 35px; height: 10px; background-color: #FFA500;"></div>
+                        <div class="ms-1" style="font-size:  10px; font-weight: bold;">Orange</div>
+                        <div style="width: 35px; height: 10px; background-color: #FFFF00;"></div>
+                        <div class="ms-1" style="font-size:  10px; font-weight: bold;">Yellow</div>
+                        <div style="width: 35px; height: 10px; background-color: #008000;"></div>
+                        <div class="ms-1" style="font-size:  10px; font-weight: bold;">Green</div>
+                        <div style="width: 35px; height: 10px; background-color: #0000FF;"></div>
+                        <div class="ms-1" style="font-size:  10px; font-weight: bold;">Blue</div>
+                    </div>
+                    <div class="d-flex gap-2 py-2 mt-5 text-center justify-content-center align-items-center my-circle">
+                        <div>
+                            <img src="../static/images/group1.png" alt="Logo" style="max-width: 100%">
+                        </div>
+                    </div>
+                </div>
+                <div class="col-6 mt-5 mt-xl-0">
+                    <div class="container col-6 text-center"><strong>Расходы</strong></div>
+                    <div class="d-flex gap-2 py-2 text-center justify-content-center align-items-center">
+                        <div style="width: 35px; height: 10px; background-color: #FF0000;"></div>
+                        <div class="ms-1" style="font-size:  12px; font-weight: bold;">Red</div>
+                        <div style="width: 35px; height: 10px; background-color: #FFA500;"></div>
+                        <div class="ms-1" style="font-size:  10px; font-weight: bold;">Orange</div>
+                        <div style="width: 35px; height: 10px; background-color: #FFFF00;"></div>
+                        <div class="ms-1" style="font-size:  10px; font-weight: bold;">Yellow</div>
+                        <div style="width: 35px; height: 10px; background-color: #008000;"></div>
+                        <div class="ms-1" style="font-size:  10px; font-weight: bold;">Green</div>
+                        <div style="width: 35px; height: 10px; background-color: #0000FF;"></div>
+                        <div class="ms-1" style="font-size:  10px; font-weight: bold;">Blue</div>
+                    </div>
+                    <div class="d-flex gap-2 py-2 mt-5 text-center justify-content-center align-items-center my-circle">
+                        <div>
+                            <img src="../static/images/group2.png" alt="Logo" style="max-width: 100%">
+                        </div>
+                    </div>
+                </div>
+
+            </div>
