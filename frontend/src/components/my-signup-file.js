@@ -91,8 +91,8 @@ export class SignUpForm {
 
         // Итог валидации
         if (isValid) {
-            alert('ФОРМА ЗАПОЛНЕНА ВЕРНО !');
-            this.processForm2();
+            // alert('ФОРМА ЗАПОЛНЕНА ВЕРНО !');
+            this.authSignUp();
         } else {
             console.log('isValid = false');
             alert('ОШИБКИ В ПОЛЯХ ФОРМЫ !');
@@ -103,7 +103,7 @@ export class SignUpForm {
     }
 
     // Запрос на backend и получение ответа
-    async processForm2() {
+    async authSignUp() {
 
         const fullName = this.nameElement.value;
         console.log('fullName   ' + fullName);
@@ -172,7 +172,14 @@ export class SignUpForm {
             // alert(bedResult.message);
             // isValid ? alert('SUCSESS') : console.log('isValid = false');
             // alert(bedResult.validation[0].message);
-            bedResult.validation ? alert('ОШИБКА[0] ! ' + bedResult.validation[0].message) : alert('ОШИБКА !!!! ' + bedResult.message);
+
+
+            bedResult.validation ? alert('ОШИБКА В АДРЕСЕ  !') : alert('ТАКОЙ ПОЛЬЗОВАТЕЛЬ УЖЕ СОЗДАН !');
+
+
+            // bedResult.validation ? alert('ОШИБКА[0] ! ' + bedResult.validation[0].message) : alert('ОШИБКА !!!! ' + bedResult.message);
+
+
             // alert('НЕТ ТАКОГО ПОЛЬЗОВАТЕЛЯ! ' + ' response.status - ' +response.message);
             // location.href = '#/sign-up';
             // alert('response.status - ' +response.status);
@@ -183,60 +190,17 @@ export class SignUpForm {
             console.log(result.user.email);
             console.log(result.user.name);
             console.log(result.user.lastName);
-            alert('ПОЛЬЗОВАТЕЛЬ ' + result.user.name  + '  ' + result.user.lastName + ' СОЗДАН !');
-            this.processForm3();
-
-
-            // alert('result ' + result.user.name);
-            // alert('result ' + result.user.lastName);
-
+            // alert('ПОЛЬЗОВАТЕЛЬ ' + result.user.name  + '  ' + result.user.lastName + ' СОЗДАН !');
+             this.authLogin();
         }
-
-        // alert('response.status ' + response.status);
-        // const result = await response.json();
-        // console.log(result);
-        // alert('result ' + result.message);
-
-        // if (!response) {
-        //     alert('НЕТ ТАКОГО ПОЛЬЗОВАТЕЛЯ!');
-        // }
-        // if (response) {
-        // if (result.error || !result.accessToken || !result.refreshToken || !result.fullName || !result.userId) {
-        //     throw new Error(result.message);
-        // }
-        // alert('YES ПОЛЬЗОВАТЕЛ!');
-        // console.log(response);
-        // location.href = '#/';
-
-
-
-        // Auth.setTokens(result.accessToken, result.refreshToken);
-        // Auth.setUserInfo({
-        //     fullName: result.fullName,
-        //     userId: result.userId,
-        //     userEmail: result.userEmail
-        // })
-        // location.href = '#/';
-        // }
-        // else {
-        //     alert('НЕТ ТАКОГО ПОЛЬЗОВАТЕЛЯ!');
-        // }
-
     }
 
-    async processForm3() {
-
-
+    async authLogin() {
         const email = this.emailElement.value;
         const password = this.passwordElement.value;
 
         console.log(email);
         console.log(password);
-
-        // alert('email ' + email);
-        // alert('password ' + password);
-        // alert('rememberMe ' + rememberMe);
-
         console.log('JSON.stringify :  ' + JSON.stringify({
             email: email,
             password: password,
@@ -267,16 +231,6 @@ export class SignUpForm {
         }
         else {
             const result = await response.json();
-            console.log(result);
-            console.log(result.user.id);
-            console.log(result.user.name);
-            console.log(result.user.lastName);
-
-            console.log(result.tokens.accessToken);
-            console.log(result.tokens.refreshToken);
-            // alert('result ' + result.user.name);
-            // alert('result ' + result.user.lastName);
-
             let accessTokenKey = 'accessToken';
             let refreshTokenKey = 'refreshToken';
             let userId = result.user.id;
@@ -287,50 +241,30 @@ export class SignUpForm {
             localStorage.setItem('userid', userId);
             localStorage.setItem('username', userName);
             localStorage.setItem('userlastname', userLastName);
-            console.log(localStorage.accessToken);
-            console.log(localStorage.refreshToken);
-            console.log(localStorage.userid);
-            console.log(localStorage.username);
-            console.log(localStorage.userlastname);
+            // console.log(localStorage.accessToken);
+            // console.log(localStorage.refreshToken);
+            // console.log(localStorage.userid);
+            // console.log(localStorage.username);
+            // console.log(localStorage.userlastname);
             // alert(localStorage.accessTokenKey);
             // alert(localStorage.refreshTokenKey);
-            // JSON.stringify({refreshToken: refreshToken})
-            location.href = '#/';
+            // alert('ПОЛЬЗОВАТЕЛЬ СОЗДАН ! ');
+
+            // Ваш код, где раньше был alert()
+            function showSuccessToast() {
+                document.getElementById('userAlert').innerText = localStorage.username + '  ' + localStorage.userlastname;
+                const toastElement = document.getElementById('liveToast');
+                const toast = new bootstrap.Toast(toastElement);
+                toast.show();
+
+                setTimeout(() => {
+                    location.href = '#/';
+                }, 3000);
+            }
+
+            // Вызов функции
+            showSuccessToast();
+            // location.href = '#/';
         }
-
-        // alert('response.status ' + response.status);
-        // const result = await response.json();
-        // console.log(result);
-        // alert('result ' + result.message);
-
-        // if (!response) {
-        //     alert('НЕТ ТАКОГО ПОЛЬЗОВАТЕЛЯ!');
-        // }
-        // if (response) {
-        // if (result.error || !result.accessToken || !result.refreshToken || !result.fullName || !result.userId) {
-        //     throw new Error(result.message);
-        // }
-        // alert('YES ПОЛЬЗОВАТЕЛ!');
-        // console.log(response);
-        // location.href = '#/';
-
-
-
-        // Auth.setTokens(result.accessToken, result.refreshToken);
-        // Auth.setUserInfo({
-        //     fullName: result.fullName,
-        //     userId: result.userId,
-        //     userEmail: result.userEmail
-        // })
-        // location.href = '#/';
-        // }
-        // else {
-        //     alert('НЕТ ТАКОГО ПОЛЬЗОВАТЕЛЯ!');
-        // }
-
     }
-
 }
-
-// Использование:
-// const signUpForm = new SignUpForm();

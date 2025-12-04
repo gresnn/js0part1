@@ -50,8 +50,8 @@ export class SignInForm {
 
         // Итог валидации
         if (isValid) {
-            alert('ФОРМА ЗАПОЛНЕНА ВЕРНО !');
-            this.processForm2();
+            // alert('ФОРМА ЗАПОЛНЕНА ВЕРНО !');
+            this.authLogin();
         } else {
             console.log('isValid = false');
             alert('ОШИБКИ В ПОЛЯХ ФОРМЫ !');
@@ -61,7 +61,7 @@ export class SignInForm {
     }
 
     // Запрос на backend и получение ответа
-    async processForm2() {
+    async authLogin() {
 
 
         const email = this.emailElement.value;
@@ -70,9 +70,6 @@ export class SignInForm {
         console.log(email);
         console.log(password);
         console.log(rememberMe);
-        // alert('email ' + email);
-        // alert('password ' + password);
-        // alert('rememberMe ' + rememberMe);
 
         console.log('JSON.stringify :  ' + JSON.stringify({
             email: email,
@@ -98,20 +95,18 @@ export class SignInForm {
         console.log(response.status);
         // alert(response.status);
         if (response.status < 200 || response.status >=300) {
-            alert('НЕТ ТАКОГО ПОЛЬЗОВАТЕЛЯ! ' + ' response.status - ' +response.status);
-            location.href = '#/sign-up';
+            // alert('НЕТ ТАКОГО ПОЛЬЗОВАТЕЛЯ! ' + ' response.status - ' +response.status);
+            alert('НЕТ ТАКОГО ПОЛЬЗОВАТЕЛЯ! -или- ОШИБКА В ПОЧТЕ ИЛИ ПАРОЛЕ!');
+            // location.href = '#/sign-up';
             // alert('response.status - ' +response.status);
         }
         else {
             const result = await response.json();
-            console.log(result.user.id);
-            console.log(result.user.name);
-            console.log(result.user.lastName);
-
-            console.log(result.tokens.accessToken);
-            console.log(result.tokens.refreshToken);
-            // alert('result ' + result.user.name);
-            // alert('result ' + result.user.lastName);
+            // console.log(result.user.id);
+            // console.log(result.user.name);
+            // console.log(result.user.lastName);
+            // console.log(result.tokens.accessToken);
+            // console.log(result.tokens.refreshToken);
 
             let accessTokenKey = 'accessToken';
             let refreshTokenKey = 'refreshToken';
@@ -123,50 +118,31 @@ export class SignInForm {
             localStorage.setItem('userid', userId);
             localStorage.setItem('username', userName);
             localStorage.setItem('userlastname', userLastName);
-            console.log(localStorage.accessToken);
-            console.log(localStorage.refreshToken);
-            console.log(localStorage.userid);
-            console.log(localStorage.username);
-            console.log(localStorage.userlastname);
+            // console.log(localStorage.accessToken);
+            // console.log(localStorage.refreshToken);
+            // console.log(localStorage.userid);
+            // console.log(localStorage.username);
+            // console.log(localStorage.userlastname);
 
+            // alert('ПОЛЬЗОВАТЕЛЬ В СИСТЕМЕ !');
+            // location.href = '#/';
 
+            // Ваш код, где раньше был alert()
+            function showSuccessToast() {
+                document.getElementById('userAlert').innerText = localStorage.username + '  ' + localStorage.userlastname;
+                const toastElement = document.getElementById('liveToast');
+                const toast = new bootstrap.Toast(toastElement);
+                toast.show();
+                setTimeout(() => {
+                    location.href = '#/';
+                }, 3000);
+            }
+            // Вызов функции
+            showSuccessToast();
 
             // alert(localStorage.accessTokenKey);
-            alert('accessTokenKey и refreshTokenKey созданы, переходим на главную!!!');
-            // JSON.stringify({refreshToken: refreshToken})
-            location.href = '#/';
+            // alert('accessTokenKey и refreshTokenKey созданы, переходим на главную!!!');
          }
-
-        // alert('response.status ' + response.status);
-        // const result = await response.json();
-        // console.log(result);
-        // alert('result ' + result.message);
-
-        // if (!response) {
-        //     alert('НЕТ ТАКОГО ПОЛЬЗОВАТЕЛЯ!');
-        // }
-        // if (response) {
-            // if (result.error || !result.accessToken || !result.refreshToken || !result.fullName || !result.userId) {
-            //     throw new Error(result.message);
-            // }
-            // alert('YES ПОЛЬЗОВАТЕЛ!');
-            // console.log(response);
-            // location.href = '#/';
-
-
-
-            // Auth.setTokens(result.accessToken, result.refreshToken);
-            // Auth.setUserInfo({
-            //     fullName: result.fullName,
-            //     userId: result.userId,
-            //     userEmail: result.userEmail
-            // })
-            // location.href = '#/';
-        // }
-        // else {
-        //     alert('НЕТ ТАКОГО ПОЛЬЗОВАТЕЛЯ!');
-        // }
-
     }
 
     // }
