@@ -27,9 +27,11 @@ export class UserLogging {
             // document.getElementById('userDashboard').innerText = nameUser + ' ' + lastNameUser;
             // document.getElementById('mobileUserDashboard').innerText = nameUser + ' ' + lastNameUser;
         }
-
+        // new PieChart('myPieChart', chartConfig);
         new AuthTokens();
         // new Auth();
+
+
 
     }
 }

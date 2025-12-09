@@ -2,6 +2,8 @@ import {SignInForm} from "./components/my-login-file.js";
 import {SignUpForm} from "./components/my-signup-file.js";
 import {UserLogging} from "./utils/user-logging.js";
 import {AuthTokens} from "./utils/auth-tokens.js";
+// import {PieChart} from "./components/my-main.js";
+import {MinePage} from "./components/my-mine-js-file.js";
 
 export class Router {
     constructor() {
@@ -18,6 +20,8 @@ export class Router {
                 styles1: 'styles/my-style.css',
                 load: () => {
                     new UserLogging();
+                    // this.initChart(); // Вызов инициализации диаграммы
+                     new MinePage();
                     // new AuthTokens();
                 }
             },
@@ -161,6 +165,47 @@ export class Router {
             }
         ]
     }
+
+    // initChart() {
+    //     // Конфигурация для круговой диаграммы
+    //     const chartConfig = {
+    //         type: 'pie',
+    //         data: {
+    //             labels: ['Доходы', 'Расходы', 'Прибыль'],
+    //             datasets: [{
+    //                 data: [70, 20, 10],
+    //                 backgroundColor: [
+    //                     'rgb(255, 99, 132)',
+    //                     'rgb(54, 162, 235)',
+    //                     'rgb(255, 205, 86)'
+    //                 ],
+    //                 hoverBackgroundColor: [
+    //                     'rgb(255, 99, 132, 0.8)',
+    //                     'rgb(54, 162, 235, 0.8)',
+    //                     'rgb(255, 205, 86, 0.8)'
+    //                 ]
+    //             }]
+    //         },
+    //         options: {
+    //             responsive: true,
+    //             maintainAspectRatio: false,
+    //             plugins: {
+    //                 legend: {
+    //                     position: 'top',
+    //                 },
+    //                 title: {
+    //                     display: true,
+    //                     text: 'Финансовые показатели'
+    //                 }
+    //             }
+    //         }
+    //     };
+    //
+    //     // Создаём экземпляр диаграммы
+    //     // Убедитесь, что в dashboard.html есть <canvas id="myChart">
+    //     new PieChart('myPieChart', chartConfig);
+    // }
+
 
     async openRoute() {
         const urlRoute = window.location.hash;
