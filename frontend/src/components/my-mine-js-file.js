@@ -6,13 +6,13 @@ export class MinePage {
     }
     // Вызов инициализации диаграммы
     init() {
-        // Конфигурация для круговой диаграммы
+        // Конфигурация для 1 круговой диаграммы
         const chartConfig = {
             type: 'pie',
             data: {
                 labels: ['Red', 'Orange', 'Yellow', 'Green', 'Blue'],
                 datasets: [{
-                    data: [10, 40, 15, 15, 20],
+                    data: [40, 15, 15, 15, 15],
                     backgroundColor: [
                         'rgb(255, 0, 0)',
                         'rgb(255, 165, 0)',
@@ -51,14 +51,13 @@ export class MinePage {
 
 
     // Создаём экземпляр диаграммы
-    // Убедитесь, что в dashboard.html есть <canvas id="myChart">
+
     new PieChart('myPieChart', chartConfig);
 
 
     }
     init2() {
-        // Конфигурация для круговой диаграммы
-
+        // Конфигурация для 2 круговой диаграммы
         const chartConfig = {
             type: 'doughnut',
             data: {
@@ -101,8 +100,6 @@ export class MinePage {
                 }
             }
         };
-
-
 
         // new PieChart2('myPieChart2', chartConfig2);
         new PieChart('myPieChart2', chartConfig);
