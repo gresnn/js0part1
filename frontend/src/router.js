@@ -1,9 +1,16 @@
 import {SignInForm} from "./components/my-login-file.js";
 import {SignUpForm} from "./components/my-signup-file.js";
 import {UserLogging} from "./utils/user-logging.js";
-import {AuthTokens} from "./utils/auth-tokens.js";
-// import {PieChart} from "./components/my-main.js";
 import {MinePage} from "./components/my-mine-js-file.js";
+import {MyIncome} from "./components/my-income.js";
+import {MyExpense} from "./components/my-expense.js";
+import {MakeIncome} from "./components/my-make-income.js";
+import {MakeOutcome} from "./components/my-make-outcome.js";
+import {MyEditExpense} from "./components/my-edit-expense.js";
+import {MyEditIncome} from "./components/my-edit-income.js";
+import {MyAllItems} from "./components/my-all-items.js";
+import {MyEditItem} from "./components/my-edit-item.js";
+import {MyMakeItem} from "./components/my-make-item.js";
 
 export class Router {
     constructor() {
@@ -20,8 +27,7 @@ export class Router {
                 styles1: 'styles/my-style.css',
                 load: () => {
                     new UserLogging();
-                    // this.initChart(); // Вызов инициализации диаграммы
-                     new MinePage();
+                    new MinePage();
                     // new AuthTokens();
                 }
             },
@@ -72,7 +78,7 @@ export class Router {
                 styles1: 'styles/my-style.css',
                 load: () => {
                     new UserLogging();
-
+                    new MyAllItems();
                 }
             },
             {
@@ -84,6 +90,7 @@ export class Router {
                 styles1: 'styles/my-style.css',
                 load: () => {
                     new UserLogging();
+                    new MyIncome();
                 }
             },
             {
@@ -95,6 +102,7 @@ export class Router {
                 styles1: 'styles/my-style.css',
                 load: () => {
                     new UserLogging();
+                    new MyExpense();
                 }
             },
             {
@@ -106,6 +114,7 @@ export class Router {
                 styles1: 'styles/my-style.css',
                 load: () => {
                     new UserLogging();
+                    new MyMakeItem();
                 }
             },
             {
@@ -117,6 +126,7 @@ export class Router {
                 styles1: 'styles/my-style.css',
                 load: () => {
                     new UserLogging();
+                    new MyEditItem();
                 }
             },
             {
@@ -128,6 +138,7 @@ export class Router {
                 styles1: 'styles/my-style.css',
                 load: () => {
                     new UserLogging();
+                    new MyEditIncome();
                 }
             },
             {
@@ -139,6 +150,7 @@ export class Router {
                 styles1: 'styles/my-style.css',
                 load: () => {
                     new UserLogging();
+                    new MyEditExpense();
                 }
             },
             {
@@ -150,6 +162,7 @@ export class Router {
                 styles1: 'styles/my-style.css',
                 load: () => {
                     new UserLogging();
+                    new MakeIncome();
                 }
             },
             {
@@ -161,6 +174,7 @@ export class Router {
                 styles1: 'styles/my-style.css',
                 load: () => {
                     new UserLogging();
+                    new MakeOutcome();
                 }
             }
         ]

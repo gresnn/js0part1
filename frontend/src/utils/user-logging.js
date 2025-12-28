@@ -6,6 +6,13 @@ export class UserLogging {
         let nameUser = localStorage.getItem('username');
         let lastNameUser = localStorage.getItem('userlastname');
         console.log(nameUser + '  ' + lastNameUser);
+        let userAmount = localStorage.getItem('userAmount');
+        console.log('ВСЕГО ДЕНЕЖЕК:   ' + userAmount);
+        let userTextAmount = document.getElementById('userAmount');
+        // console.log(userTextAmount); // Выводим итог userAmount
+        userTextAmount.innerText = userAmount;
+
+
         if (!nameUser) {
             document.getElementById('userDashboard').innerText = '*** ***';
             document.getElementById('mobileUserDashboard').innerText = '*** ***';

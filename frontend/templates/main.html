@@ -9,7 +9,7 @@
 <div class="mobile-menu  mb-0">
     <div class="btn-group-vertical btn-group-sm text-center" role="group"
          aria-label="Меню-бургер">
-        <div class="btn-group btn-group-sm" style="width: 160px" role="group">
+        <div class="btn-group btn-group-sm" style="width: 200px" role="group">
             <button type="button" class="btn btn-outline-secondary dropdown-toggle" style="width: 160px"
                     data-bs-toggle="dropdown" aria-expanded="false" id="fade">
                 Меню
@@ -104,89 +104,107 @@
     <div class="btn-group-vertical btn-group-sm text-center" role="group"
          aria-label="Кнопки периодов">
 
-        <div class="btn-group btn-group-sm" style="width: 160px" role="group">
+        <div class="btn-group btn-group-sm" style="width: 200px" role="group">
             <button type="button" class="btn btn-outline-secondary dropdown-toggle"
-                    data-bs-toggle="dropdown" aria-expanded="false">
+                    data-bs-toggle="dropdown" aria-expanded="false" style="width: 200px">
                 Период
             </button>
-            <ul class="dropdown-menu">
-                <button class="btn btn-sm btn-outline-secondary mx-2 px-3 mb-1 ms-4 w-75" type="button">
+            <ul class="dropdown-menu" style="width: 200px">
+                <button class="btn btn-sm btn-outline-secondary mx-2 px-3 mb-1 ms-4 w-75" type="button" id="todayM">
                     Сегодня
                 </button>
-                <button class="btn btn-sm btn-outline-secondary mx-2 px-3 mb-1 ms-4 w-75" type="button">
+                <button class="btn btn-sm btn-outline-secondary mx-2 px-3 mb-1 ms-4 w-75" type="button" id="weekM">
                     Неделя
                 </button>
-                <button class="btn btn-sm btn-outline-secondary mx-2 px-3 mb-1 ms-4 w-75" type="button">
+                <button class="btn btn-sm btn-outline-secondary mx-2 px-3 mb-1 ms-4 w-75" type="button" id="monthM">
                     Месяц
                 </button>
-                <button class="btn btn-sm btn-outline-secondary mx-2 px-3 mb-1 ms-4 w-75" type="button">Год
+                <button class="btn btn-sm btn-outline-secondary mx-2 px-3 mb-1 ms-4 w-75" type="button" id="yearM">Год
                 </button>
-                <button class="btn btn-sm btn-outline-secondary mx-2 px-3 mb-1 ms-4 w-75" type="button">Все
+                <button class="btn btn-sm btn-outline-secondary mx-2 px-3 mb-1 ms-4 w-75" type="button" id="allM">Все
                 </button>
-                <button class="btn btn-sm btn-outline-secondary mx-2 px-3 mb-1 ms-4 w-75" type="button">
+                <button class="btn btn-sm btn-outline-secondary mx-2 px-3 mb-1 ms-4 w-75" type="button" id="intervalM" disabled>
                     Интервал
                 </button>
-                <button class="btn btn-sm d-flex btn-outline-secondary mx-2 px-3 mb-1 ms-4 w-75"
-                        type="button">
-                    <div class="ms-1 me-3">c</div>
-                    Дата
-                </button>
-                <button class="btn btn-sm d-flex btn-outline-secondary mx-2 px-3 mb-1 ms-4  w-75"
-                        type="button">
-                    <div class="ms-1 me-3">по</div>
-                    Дата
-                </button>
-                <!--                <li><a class="dropdown-item" href="#">Сегодня</a></li>-->
-                <!--                <li><a class="dropdown-item" href="#">Неделя</a></li>-->
-                <!--                <li><a class="dropdown-item" href="#">Месяц</a></li>-->
-                <!--                <li><a class="dropdown-item" href="#">Год</a></li>-->
-                <!--                <li><a class="dropdown-item" href="#">Все</a></li>-->
-                <!--                <li><a class="dropdown-item" href="#">Интервал</a></li>-->
-                <!--                <li><a class="dropdown-item" href="#">С Дата</a></li>-->
-                <!--                <li><a class="dropdown-item" href="#">ПО Дата</a></li>-->
+
+                <div class="mx-3 px-3 mb-1 ms-2">
+                    <input type="date" id="dateFromM" class="form-control mx-0 px-3  w-100">
+                    <input type="date" id="dateToM" class="form-control mx-0 px-3 mt-1 w-100">
+                </div>
+
             </ul>
         </div>
     </div>
 </div>
-<div class="mobile-title h5 mt-2 mt-sm-1 mb-3 mb-sm-1 text-center">Главная страница</div>
-<div class="container-md my-main-menu">
+<div class="mobile-title h5 mt-2 mt-sm-1 mb-2 mb-sm-1 text-center">Главная страница</div>
+<div class="mobile-title h5 mt-2 mt-sm-1 mb-0 pt-2 text-center">
+    <span class="btn btn-sm btn-outline-secondary mx-2 px-0 mb-0 ms-0"
+          id="todayMobileText"
+          style="pointer-events: none; cursor: default; width: 160px;"
+          tabindex="-1">
+  Ваш текст
+</span>
+
+    <!--    <div class="btn btn-sm btn-outline-secondary mx-2 px-0 mb-0 ms-0 w-25" type="text" id="todayMobileText">-->
+<!--    Сегодня-->
+<!--    </div>-->
+</div>
+<div class="container-md ms-0 ps-0 my-main-menu">
     <div class="h3 ms-3 py-5 my-sidebar">Главная</div>
-    <div class="d-flex flex-row gap-0 gap-xl-2 ms-2" id="main-menu">
+    <div class="d-flex flex-row gap-0 ms-2" id="main-menu">
+        <button class="btn btn-outline-secondary mx-2 px-3 mb-1" type="button" id="today">Сегодня</button>
+        <button class="btn btn-outline-secondary mx-2 px-3 mb-1" type="button" id="week">Неделя</button>
+        <button class="btn btn-outline-secondary mx-2 px-3 mb-1" type="button" id="month">Месяц</button>
+        <button class="btn btn-outline-secondary mx-2 px-3 mb-1" type="button" id="year">Год</button>
+        <button class="btn btn-outline-secondary mx-2 px-3 mb-1" type="button" id="all">Все</button>
 
-        <button class="btn btn-outline-secondary mx-2 px-3 btn-secondary mb-1" type="button"
-                style="color: white">
-            Сегодня
-        </button>
-        <button class="btn btn-outline-secondary mx-2 px-3 mb-1" type="button">Неделя</button>
-        <button class="btn btn-outline-secondary mx-2 px-3 mb-1" type="button">Месяц</button>
+        <button class="btn btn-outline-secondary mx-1 px-3 mb-1" type="button" id="interval" disabled>Интервал</button>
 
+        <div class="d-inline-block" style="position: relative;">
+            <button
+                    class="btn d-flex btn-outline-secondary mx-1 px-3 mb-1"
+                    type="button"
+                    id="dateFromBtn"
+            >
+                <div class="ms-1 me-3">c</div>
+                Дата
+            </button>
+            <input
+                    type="date"
+                    id="dateFrom"
+                    class="form-control"
+                    style="position: absolute; top: 40px; right: 0; opacity: 0;"
+            >
+        </div>
 
-        <button class="btn btn-outline-secondary mx-2 px-3 mb-1" type="button">Год</button>
-        <button class="btn btn-outline-secondary mx-2 px-3 mb-1" type="button">Все</button>
-
-
-        <button class="btn btn-outline-secondary mx-2 px-3 mb-1" type="button">Интервал</button>
-
-        <button class="btn d-flex btn-outline-secondary mx-2 px-3 mb-1" type="button">
-            <div class="ms-1 me-3">c</div>
-            Дата
-        </button>
-        <button class="btn d-flex btn-outline-secondary mx-2 px-3 mb-1" type="button">
-            <div class="ms-1 me-3">по</div>
-            Дата
-        </button>
+        <div class="d-inline-block" style="position: relative;">
+            <button
+                    class="btn d-flex btn-outline-secondary mx-1 px-3 mb-1"
+                    type="button"
+                    id="dateToBtn"
+            >
+                <div class="ms-1 me-3">по</div>
+                Дата
+            </button>
+            <input
+                    type="date"
+                    id="dateTo"
+                    class="form-control"
+                    style="position: absolute; top: 40px; left: 0; opacity: 0;"
+            >
+        </div>
 
     </div>
 </div>
 <div class="d-flex flex-xl-row flex-column align-content-center row mt-0 mt-sm-1 mt-xl-5 ms-xl-3 justify-content-between">
 
-    <div class="col col-xl-6 mt-1 mt-xl-0 mb-1 mb-xl-0 my-circle-border">
+    <div class="col col-xl-6 mt-1 mt-xl-0 mb-1 mb-xl-0 my-circle-border" id="myPieChartText">
         <div class="d-flex gap-2 py-2 mt-0 text-center justify-content-center align-items-center my-circle">
             <canvas id="myPieChart" width="450" height="450"></canvas>
         </div>
     </div>
 
-    <div class="col col-xl-6 mt-3 mt-sm-1 mt-xl-0">
+    <div class="col col-xl-6 mt-3 mt-sm-1 mt-xl-0" id="myPieChart2Text">
         <div class="d-flex gap-2 py-2 mt-0 text-center justify-content-center align-items-center my-circle">
             <canvas id="myPieChart2" width="450" height="450"></canvas>
         </div>

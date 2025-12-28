@@ -1,12 +1,12 @@
 export class SignInForm {
     constructor(page) {
-        console.log('LOGIN');
+        // console.log('LOGIN');
         localStorage.removeItem('accessToken');
         localStorage.removeItem('refreshToken');
         localStorage.removeItem('userid');
         localStorage.removeItem('username');
         localStorage.removeItem('userlastname');
-        this.page = page;
+        // this.page = page;
 
         // Инициализация элементов формы
         this.emailElement = document.getElementById('email');
@@ -67,16 +67,16 @@ export class SignInForm {
         const email = this.emailElement.value;
         const password = this.passwordElement.value;
         const rememberMe = this.agreeElement.checked;
-        console.log(email);
-        console.log(password);
-        console.log(rememberMe);
+        // console.log(email);
+        // console.log(password);
+        // console.log(rememberMe);
 
-        console.log('JSON.stringify :  ' + JSON.stringify({
-            email: email,
-            password: password,
-            rememberMe: rememberMe,
-
-        }));
+        // console.log('JSON.stringify :  ' + JSON.stringify({
+        //     email: email,
+        //     password: password,
+        //     rememberMe: rememberMe,
+        //
+        // }));
 
         const response = await fetch('http://localhost:3000/api/login', {
             method: 'POST',
@@ -92,7 +92,7 @@ export class SignInForm {
         });
 
         // console.log(response);
-        console.log(response.status);
+        // console.log(response.status);
         // alert(response.status);
         if (response.status < 200 || response.status >=300) {
             // alert('НЕТ ТАКОГО ПОЛЬЗОВАТЕЛЯ! ' + ' response.status - ' +response.status);
@@ -102,12 +102,6 @@ export class SignInForm {
         }
         else {
             const result = await response.json();
-            // console.log(result.user.id);
-            // console.log(result.user.name);
-            // console.log(result.user.lastName);
-            // console.log(result.tokens.accessToken);
-            // console.log(result.tokens.refreshToken);
-
             let accessTokenKey = 'accessToken';
             let refreshTokenKey = 'refreshToken';
             let userId = result.user.id;
@@ -126,7 +120,7 @@ export class SignInForm {
 
             // alert('ПОЛЬЗОВАТЕЛЬ В СИСТЕМЕ !');
             // location.href = '#/';
-
+            this.getUserAmount();
             // Ваш код, где раньше был alert()
             function showSuccessToast() {
                 document.getElementById('userAlert').innerText = localStorage.username + '  ' + localStorage.userlastname;
@@ -146,101 +140,84 @@ export class SignInForm {
     }
 
     // }
+  async getUserAmount() {
 
-
-    processForm() {
-        // alert('SUCSESS 222222 SUCSESS');
-        if (this.validateForm()) {
-
-            const email = this.fields.find(item => item.name === 'email').element.value;
-            const password = this.fields.find(item => item.name === 'password').element.value;
-            console.log(email);
-            console.log(password);
-            alert('SUCSESS 222222 SUCSESS');
-
-
-            if (this.page === 'signup') {
-
-                try {
-                    const result = CustomHttp.request(config.host + '/signup', "POST", {
-                        name: this.fields.find(item => item.name === 'name').element.value,
-                        lastName: this.fields.find(item => item.name === 'lastName').element.value,
-                        email: email,
-                        password: password,
-                    });
-
-                    if (result) {
-                        if (result.error || !result.user) {
-                            throw new Error(result.message);
-                        }
-                        //    location.href = '#/choice';
-                    }
-                } catch (error) {
-                    alert(error);
-                    return console.log(error);
-                }
-
+        try {
+            let myAccessToken = localStorage.getItem('accessToken');
+            // console.log(myAccessToken);
+            // sessionStorage.clear();
+            if (!myAccessToken) {
+                console.log('Token not found');
+                return;
             }
-            // else {
-            try {
-                const result = CustomHttp.request(config.host + '/login', "POST", {
-                    email: email,
-                    password: password,
+
+            const response = await fetch('http://localhost:3000/api/balance', {
+                method: 'GET',
+                headers: {
+                    'Content-type': 'application/json',
+                    'Accept': 'application/json',
+                    'x-auth-token': myAccessToken,
+                }
+            });
+
+            // console.log(response);
+            // console.log(response.status);
+
+            if (response.status === 401) {
+                console.log('Данные response.status устарели !!!! === 401!');
+                // alert('Данные response.status устарели !!!! === 401!');
+                ////////////////////
+
+                const response = await fetch('http://localhost:3000/api/refresh', {
+                    method: 'POST',
+                    headers: {
+                        'Content-type': 'application/json',
+                        'Accept': 'application/json',
+                        // 'x-auth-token': constRefreshToken,
+                    },
+                    body: JSON.stringify({refreshToken: myRefreshToken})
                 });
-                if (!result) {
-                    alert('НЕТ ТАКОГО ПОЛЬЗОВАТЕЛЯ!');
-                }
-                if (result) {
-                    if (result.error || !result.accessToken || !result.refreshToken || !result.fullName || !result.userId) {
-                        throw new Error(result.message);
+
+                // console.log(response);
+                // console.log(response.status);
+
+                if (response && response.status === 200) {
+                    const result = await response.json();
+                    if (result && !result.error) {
+                        localStorage.setItem('accessToken', result.tokens.accessToken);
+                        localStorage.setItem('refreshToken', result.tokens.refreshToken);
+                        this.init();
+                        // return;
                     }
-
-
-                    Auth.setTokens(result.accessToken, result.refreshToken);
-                    Auth.setUserInfo({
-                        fullName: result.fullName,
-                        userId: result.userId,
-                        userEmail: result.userEmail
-                    })
-                    location.href = '#/choice';
                 }
-                // else {
-                //     alert('НЕТ ТАКОГО ПОЛЬЗОВАТЕЛЯ!');
-                // }
+                /////////////////////////
+                // console.log(response.status);
+                if (response.status === 400) {
+                    console.log('Данные response.status устарели !!!! === 400!');
+                    // alert('Данные response.status устарели !!!! === 400!');
+                    ////////////////////
+                    localStorage.clear();
+                    // location.href = '#/sign-in';
 
-            } catch (error) {
-                console.log(error);
-                alert(error);
+                }
+            } else {
+
+                if (!response.ok) { // Более короткая проверка статуса
+                    alert('Ошибка сервера: ' + response.status);
+                    return;
+                }
+                const result = await response.json();
+                console.log(result.balance);
+                // alert('OK!!!!!! при загрузке данных');
+                // console.log(userAmount); // Выводим итог userAmount
+                localStorage.setItem('userAmount', result.balance);
             }
-        }
 
-        //     sessionStorage
-
-        let cart = sessionStorage.getItem('cart');
-        let userTest = [];
-        let paramString = '';
-        this.fields.forEach(item => {
-            paramString += (!paramString ? '?' : '&') + item.name + '=' + item.element.value;
-            console.log(item.element.value);
-            userTest.push(item.element.value);
-            console.log(userTest);
-            console.log('cart  ' + cart);
-            console.log(sessionStorage);
-            //
-        })
-        console.log(userTest);
-        if (sessionStorage.length === 0) {
-            sessionStorage.setItem('userName', JSON.stringify(userTest));
-            console.log(sessionStorage);
+        } catch (error) {
+            console.error('Ошибка запроса:', error);
+            alert('Произошла ошибка при загрузке данных');
         }
-        // console.log(sessionStorage);
-        userTest = JSON.parse(sessionStorage.getItem('userName'));
-        console.log(typeof userTest);
-        console.log(userTest);
-        //   location.href = '#/choice' + paramString;
     }
-
-
 }
 
 

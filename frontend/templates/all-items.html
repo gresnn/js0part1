@@ -10,7 +10,7 @@
 <div class="mobile-menu mb-0">
     <div class="btn-group-vertical btn-group-sm text-center" role="group"
          aria-label="Меню-бургер">
-        <div class="btn-group btn-group-sm" style="width: 160px" role="group">
+        <div class="btn-group btn-group-sm" style="width: 200px" role="group">
             <button type="button" class="btn btn-outline-secondary dropdown-toggle" style="width: 160px"
                     data-bs-toggle="dropdown" aria-expanded="false" id="fade">
                 Меню
@@ -84,7 +84,7 @@
                 <hr>
                 <div class="d-flex justify-content-center text-center align-items-center mb-2 text-decoration-none"
                      data-bs-toggle="dropdown" aria-expanded="false">
-                    <img src="../src/images/group1.png" alt="" width="20" height="20"
+                    <img src="../static/images/group1.png" alt="" width="20" height="20"
                          class="rounded-circle me-1">
                     <strong id="mobileUserDashboard">Roman Chernov</strong>
                 </div>
@@ -105,89 +105,134 @@
     <div class="btn-group-vertical btn-group-sm text-center" role="group"
          aria-label="Кнопки периодов">
 
-        <div class="btn-group btn-group-sm" style="width: 160px" role="group">
+        <div class="btn-group btn-group-sm" style="width: 200px" role="group">
             <button type="button" class="btn btn-outline-secondary dropdown-toggle"
-                    data-bs-toggle="dropdown" aria-expanded="false">
+                    data-bs-toggle="dropdown" aria-expanded="false" style="width: 200px">
                 Период
             </button>
-            <ul class="dropdown-menu">
-                <button class="btn btn-sm btn-outline-secondary mx-2 px-3 mb-1 ms-4 w-75" type="button">
+            <ul class="dropdown-menu" style="width: 200px">
+                <button class="btn btn-sm btn-outline-secondary mx-2 px-3 mb-1 ms-4 w-75" type="button" id="todayM">
                     Сегодня
                 </button>
-                <button class="btn btn-sm btn-outline-secondary mx-2 px-3 mb-1 ms-4 w-75" type="button">
+                <button class="btn btn-sm btn-outline-secondary mx-2 px-3 mb-1 ms-4 w-75" type="button" id="weekM">
                     Неделя
                 </button>
-                <button class="btn btn-sm btn-outline-secondary mx-2 px-3 mb-1 ms-4 w-75" type="button">
+                <button class="btn btn-sm btn-outline-secondary mx-2 px-3 mb-1 ms-4 w-75" type="button" id="monthM">
                     Месяц
                 </button>
-                <button class="btn btn-sm btn-outline-secondary mx-2 px-3 mb-1 ms-4 w-75" type="button">Год
+                <button class="btn btn-sm btn-outline-secondary mx-2 px-3 mb-1 ms-4 w-75" type="button" id="yearM">Год
                 </button>
-                <button class="btn btn-sm btn-outline-secondary mx-2 px-3 mb-1 ms-4 w-75" type="button">Все
+                <button class="btn btn-sm btn-outline-secondary mx-2 px-3 mb-1 ms-4 w-75" type="button" id="allM">Все
                 </button>
-                <button class="btn btn-sm btn-outline-secondary mx-2 px-3 mb-1 ms-4 w-75" type="button">
+                <button class="btn btn-sm btn-outline-secondary mx-2 px-3 mb-1 ms-4 w-75" type="button" id="intervalM" disabled>
                     Интервал
                 </button>
-                <button class="btn btn-sm d-flex btn-outline-secondary mx-2 px-3 mb-1 ms-4 w-75"
-                        type="button">
-                    <div class="ms-1 me-3">c</div>
-                    Дата
-                </button>
-                <button class="btn btn-sm d-flex btn-outline-secondary mx-2 px-3 mb-1 ms-4  w-75"
-                        type="button">
-                    <div class="ms-1 me-3">по</div>
-                    Дата
-                </button>
-                <!--                <li><a class="dropdown-item" href="#">Сегодня</a></li>-->
-                <!--                <li><a class="dropdown-item" href="#">Неделя</a></li>-->
-                <!--                <li><a class="dropdown-item" href="#">Месяц</a></li>-->
-                <!--                <li><a class="dropdown-item" href="#">Год</a></li>-->
-                <!--                <li><a class="dropdown-item" href="#">Все</a></li>-->
-                <!--                <li><a class="dropdown-item" href="#">Интервал</a></li>-->
-                <!--                <li><a class="dropdown-item" href="#">С Дата</a></li>-->
-                <!--                <li><a class="dropdown-item" href="#">ПО Дата</a></li>-->
+
+                <div class="mx-3 px-3 mb-1 ms-2">
+                    <input type="date" id="dateFromM" class="form-control mx-0 px-3  w-100">
+                    <input type="date" id="dateToM" class="form-control mx-0 px-3 mt-1 w-100">
+                </div>
+
             </ul>
         </div>
     </div>
 </div>
-<!--            <div class="mobile-title h5 mt-2 mt-sm-1 mb-3 mb-sm-1 text-center">Доходы и расходы mobi </div>-->
+<!--<div class="mobile-title h5 mt-2 mt-sm-1 mb-3 mb-sm-1 text-center">Доходы и расходы mobi </div>-->
 <form class="row ms-0">
     <div class="mobile-title h5 mt-3 mb-3 mt-xl-0 mb-xl-0 text-center">Доходы и расходы</div>
     <div class="d-flex  flex-row gap-3 gap-lg-0 col-12 justify-content-around justify-content-xl-start  mt-3 mt-xl-0 mb-3 mb-xl-4">
-        <a href="#/new-item" class="btn btn-success me-2">Создать
+        <a id="makeIncome" class="btn btn-success me-2">Создать
             доход</a>
-        <a href="#/new-item" class="btn btn-danger me-2">Создать
+        <a id="makeOutcome" class="btn btn-danger me-2">Создать
             расход</a>
         <!--                    <input class="btn btn-danger" type="reset" value="Отмена">-->
     </div>
 </form>
 <div class="container-md ms-0 ps-0 my-main-menu">
     <!--                <div class="h3 ms-3 py-5 my-sidebar">Главная</div>-->
-    <div class="d-flex flex-row gap-0 gap-xl-2 ms-1" id="main-menu">
+    <div class="d-flex flex-row gap-0 ms-2" id="main-menu">
+        <button class="btn btn-outline-secondary mx-2 px-3 mb-1" type="button" id="today">Сегодня</button>
+        <button class="btn btn-outline-secondary mx-2 px-3 mb-1" type="button" id="week">Неделя</button>
+        <button class="btn btn-outline-secondary mx-2 px-3 mb-1" type="button" id="month">Месяц</button>
+        <button class="btn btn-outline-secondary mx-2 px-3 mb-1" type="button" id="year">Год</button>
+        <button class="btn btn-outline-secondary mx-2 px-3 mb-1" type="button" id="all">Все</button>
 
-        <button class="btn btn-outline-secondary mx-2 px-3 btn-secondary mb-1" type="button"
-                style="color: white">
-            Сегодня
-        </button>
-        <button class="btn btn-outline-secondary mx-2 px-3 mb-1" type="button">Неделя</button>
-        <button class="btn btn-outline-secondary mx-2 px-3 mb-1" type="button">Месяц</button>
+        <button class="btn btn-outline-secondary mx-1 px-3 mb-1" type="button" id="interval" disabled>Интервал</button>
 
+        <div class="d-inline-block" style="position: relative;">
+            <button
+                    class="btn d-flex btn-outline-secondary mx-1 px-3 mb-1"
+                    type="button"
+                    id="dateFromBtn"
+            >
+                <div class="ms-1 me-3">c</div>
+                Дата
+            </button>
+            <input
+                    type="date"
+                    id="dateFrom"
+                    class="form-control"
+                    style="position: absolute; top: 40px; right: 0; opacity: 0;"
+            >
+        </div>
 
-        <button class="btn btn-outline-secondary mx-2 px-3 mb-1" type="button">Год</button>
-        <button class="btn btn-outline-secondary mx-2 px-3 mb-1" type="button">Все</button>
-
-
-        <button class="btn btn-outline-secondary mx-2 px-3 mb-1" type="button">Интервал</button>
-
-        <button class="btn d-flex btn-outline-secondary mx-2 px-3 mb-1" type="button">
-            <div class="ms-1 me-3">c</div>
-            Дата
-        </button>
-        <button class="btn d-flex btn-outline-secondary mx-2 px-3 mb-1" type="button">
-            <div class="ms-1 me-3">по</div>
-            Дата
-        </button>
-
+        <div class="d-inline-block" style="position: relative;">
+            <button
+                    class="btn d-flex btn-outline-secondary mx-1 px-3 mb-1"
+                    type="button"
+                    id="dateToBtn"
+            >
+                <div class="ms-1 me-3">по</div>
+                Дата
+            </button>
+            <input
+                    type="date"
+                    id="dateTo"
+                    class="form-control"
+                    style="position: absolute; top: 40px; left: 0; opacity: 0;"
+            >
+        </div>
     </div>
+
+
+    <!--    <div class="d-flex flex-row gap-0 gap-xl-2 ms-1" id="main-menu">-->
+
+    <!--        <button class="btn btn-outline-secondary mx-2 px-3 btn-secondary mb-1" type="button"-->
+    <!--                style="color: white">-->
+    <!--            Сегодня-->
+    <!--        </button>-->
+    <!--        <button class="btn btn-outline-secondary mx-2 px-3 mb-1" type="button">Неделя</button>-->
+    <!--        <button class="btn btn-outline-secondary mx-2 px-3 mb-1" type="button">Месяц</button>-->
+
+
+    <!--        <button class="btn btn-outline-secondary mx-2 px-3 mb-1" type="button">Год</button>-->
+    <!--        <button class="btn btn-outline-secondary mx-2 px-3 mb-1" type="button">Все</button>-->
+
+
+    <!--        <button class="btn btn-outline-secondary mx-2 px-3 mb-1" type="button">Интервал</button>-->
+
+    <!--        <button class="btn d-flex btn-outline-secondary mx-2 px-3 mb-1" type="button">-->
+    <!--            <div class="ms-1 me-3">c</div>-->
+    <!--            Дата-->
+    <!--        </button>-->
+    <!--        <button class="btn d-flex btn-outline-secondary mx-2 px-3 mb-1" type="button">-->
+    <!--            <div class="ms-1 me-3">по</div>-->
+    <!--            Дата-->
+    <!--        </button>-->
+
+    <!--    </div>-->
+</div>
+<div class="mobile-title h5 mt-2 mt-sm-1 mb-0 pt-2 text-center">
+    <span class="btn btn-sm btn-outline-secondary mx-2 px-0 mb-0 ms-0"
+          id="todayMobileText"
+          style="pointer-events: none; cursor: default; width: 160px;"
+          tabindex="-1">
+  Ваш текст
+</span>
+
+    <!--    <div class="btn btn-sm btn-outline-secondary mx-2 px-0 mb-0 ms-0 w-25" type="text" id="todayMobileText">-->
+    <!--    Сегодня-->
+    <!--    </div>-->
 </div>
 <div class="row">
     <div class="col-md-12  mt-2 mt-xl-5 table-responsive">
@@ -204,106 +249,106 @@
                 <th scope="col"></th>
             </tr>
             </thead>
-            <tbody>
-            <tr>
-                <th scope="row">1</th>
-                <td style="color: green">Доход</td>
-                <td>Otto</td>
-                <td>1000$</td>
-                <td>01.11.2025</td>
-                <td>нету</td>
-                <td>
-                    <svg data-bs-toggle="modal" data-bs-target="#staticBackdrop" width="13" height="15"
-                         viewBox="0 0 13 15" fill="none"
-                         xmlns="http://www.w3.org/2000/svg">
-                        <path d="M4 5.5C4.27614 5.5 4.5 5.72386 4.5 6V12C4.5 12.2761 4.27614 12.5 4 12.5C3.72386 12.5 3.5 12.2761 3.5 12V6C3.5 5.72386 3.72386 5.5 4 5.5Z"
-                              fill="black"/>
-                        <path d="M6.5 5.5C6.77614 5.5 7 5.72386 7 6V12C7 12.2761 6.77614 12.5 6.5 12.5C6.22386 12.5 6 12.2761 6 12V6C6 5.72386 6.22386 5.5 6.5 5.5Z"
-                              fill="black"/>
-                        <path d="M9.5 6C9.5 5.72386 9.27614 5.5 9 5.5C8.72386 5.5 8.5 5.72386 8.5 6V12C8.5 12.2761 8.72386 12.5 9 12.5C9.27614 12.5 9.5 12.2761 9.5 12V6Z"
-                              fill="black"/>
-                        <path fill-rule="evenodd" clip-rule="evenodd"
-                              d="M13 3C13 3.55228 12.5523 4 12 4H11.5V13C11.5 14.1046 10.6046 15 9.5 15H3.5C2.39543 15 1.5 14.1046 1.5 13V4H1C0.447715 4 0 3.55228 0 3V2C0 1.44772 0.447715 1 1 1H4.5C4.5 0.447715 4.94772 0 5.5 0H7.5C8.05229 0 8.5 0.447715 8.5 1H12C12.5523 1 13 1.44772 13 2V3ZM2.61803 4L2.5 4.05902V13C2.5 13.5523 2.94772 14 3.5 14H9.5C10.0523 14 10.5 13.5523 10.5 13V4.05902L10.382 4H2.61803ZM1 3V2H12V3H1Z"
-                              fill="black"/>
-                    </svg>
-                </td>
-                <td>
-                    <a href="#/edit-item">
-                        <svg style="margin-left: 10px" width="16" height="16" viewBox="0 0 16 16"
-                             fill="none"
-                             xmlns="http://www.w3.org/2000/svg">
-                            <path d="M12.1465 0.146447C12.3417 -0.0488155 12.6583 -0.0488155 12.8536 0.146447L15.8536 3.14645C16.0488 3.34171 16.0488 3.65829 15.8536 3.85355L5.85357 13.8536C5.80569 13.9014 5.74858 13.9391 5.68571 13.9642L0.68571 15.9642C0.500001 16.0385 0.287892 15.995 0.146461 15.8536C0.00502989 15.7121 -0.0385071 15.5 0.0357762 15.3143L2.03578 10.3143C2.06092 10.2514 2.09858 10.1943 2.14646 10.1464L12.1465 0.146447ZM11.2071 2.5L13.5 4.79289L14.7929 3.5L12.5 1.20711L11.2071 2.5ZM12.7929 5.5L10.5 3.20711L4.00001 9.70711V10H4.50001C4.77616 10 5.00001 10.2239 5.00001 10.5V11H5.50001C5.77616 11 6.00001 11.2239 6.00001 11.5V12H6.29291L12.7929 5.5ZM3.03167 10.6755L2.92614 10.781L1.39754 14.6025L5.21903 13.0739L5.32456 12.9683C5.13496 12.8973 5.00001 12.7144 5.00001 12.5V12H4.50001C4.22387 12 4.00001 11.7761 4.00001 11.5V11H3.50001C3.28561 11 3.10272 10.865 3.03167 10.6755Z"
-                                  fill="black"/>
-                        </svg>
-                    </a>
-                </td>
-            </tr>
-            <tr>
-                <th scope="row">2</th>
-                <td style="color: red">Расход</td>
-                <td>Thornton</td>
-                <td>500$</td>
-                <td>01.11.2025</td>
-                <td>нету</td>
-                <td>
-                    <svg data-bs-toggle="modal" data-bs-target="#staticBackdrop" width="13" height="15"
-                         viewBox="0 0 13 15" fill="none"
-                         xmlns="http://www.w3.org/2000/svg">
-                        <path d="M4 5.5C4.27614 5.5 4.5 5.72386 4.5 6V12C4.5 12.2761 4.27614 12.5 4 12.5C3.72386 12.5 3.5 12.2761 3.5 12V6C3.5 5.72386 3.72386 5.5 4 5.5Z"
-                              fill="black"/>
-                        <path d="M6.5 5.5C6.77614 5.5 7 5.72386 7 6V12C7 12.2761 6.77614 12.5 6.5 12.5C6.22386 12.5 6 12.2761 6 12V6C6 5.72386 6.22386 5.5 6.5 5.5Z"
-                              fill="black"/>
-                        <path d="M9.5 6C9.5 5.72386 9.27614 5.5 9 5.5C8.72386 5.5 8.5 5.72386 8.5 6V12C8.5 12.2761 8.72386 12.5 9 12.5C9.27614 12.5 9.5 12.2761 9.5 12V6Z"
-                              fill="black"/>
-                        <path fill-rule="evenodd" clip-rule="evenodd"
-                              d="M13 3C13 3.55228 12.5523 4 12 4H11.5V13C11.5 14.1046 10.6046 15 9.5 15H3.5C2.39543 15 1.5 14.1046 1.5 13V4H1C0.447715 4 0 3.55228 0 3V2C0 1.44772 0.447715 1 1 1H4.5C4.5 0.447715 4.94772 0 5.5 0H7.5C8.05229 0 8.5 0.447715 8.5 1H12C12.5523 1 13 1.44772 13 2V3ZM2.61803 4L2.5 4.05902V13C2.5 13.5523 2.94772 14 3.5 14H9.5C10.0523 14 10.5 13.5523 10.5 13V4.05902L10.382 4H2.61803ZM1 3V2H12V3H1Z"
-                              fill="black"/>
-                    </svg>
-                </td>
-                <td>
-                    <a href="#/edit-item">
-                        <svg style="margin-left: 10px" width="16" height="16" viewBox="0 0 16 16"
-                             fill="none"
-                             xmlns="http://www.w3.org/2000/svg">
-                            <path d="M12.1465 0.146447C12.3417 -0.0488155 12.6583 -0.0488155 12.8536 0.146447L15.8536 3.14645C16.0488 3.34171 16.0488 3.65829 15.8536 3.85355L5.85357 13.8536C5.80569 13.9014 5.74858 13.9391 5.68571 13.9642L0.68571 15.9642C0.500001 16.0385 0.287892 15.995 0.146461 15.8536C0.00502989 15.7121 -0.0385071 15.5 0.0357762 15.3143L2.03578 10.3143C2.06092 10.2514 2.09858 10.1943 2.14646 10.1464L12.1465 0.146447ZM11.2071 2.5L13.5 4.79289L14.7929 3.5L12.5 1.20711L11.2071 2.5ZM12.7929 5.5L10.5 3.20711L4.00001 9.70711V10H4.50001C4.77616 10 5.00001 10.2239 5.00001 10.5V11H5.50001C5.77616 11 6.00001 11.2239 6.00001 11.5V12H6.29291L12.7929 5.5ZM3.03167 10.6755L2.92614 10.781L1.39754 14.6025L5.21903 13.0739L5.32456 12.9683C5.13496 12.8973 5.00001 12.7144 5.00001 12.5V12H4.50001C4.22387 12 4.00001 11.7761 4.00001 11.5V11H3.50001C3.28561 11 3.10272 10.865 3.03167 10.6755Z"
-                                  fill="black"/>
-                        </svg>
-                    </a>
-                </td>
-            </tr>
-            <tr>
-                <th scope="row">3</th>
-                <td style="color: red"> Расход</td>
-                <td>Thornton</td>
-                <td>10$</td>
-                <td>01.11.2025</td>
-                <td>нету</td>
-                <td>
-                    <svg data-bs-toggle="modal" data-bs-target="#staticBackdrop" width="13" height="15"
-                         viewBox="0 0 13 15" fill="none"
-                         xmlns="http://www.w3.org/2000/svg">
-                        <path d="M4 5.5C4.27614 5.5 4.5 5.72386 4.5 6V12C4.5 12.2761 4.27614 12.5 4 12.5C3.72386 12.5 3.5 12.2761 3.5 12V6C3.5 5.72386 3.72386 5.5 4 5.5Z"
-                              fill="black"/>
-                        <path d="M6.5 5.5C6.77614 5.5 7 5.72386 7 6V12C7 12.2761 6.77614 12.5 6.5 12.5C6.22386 12.5 6 12.2761 6 12V6C6 5.72386 6.22386 5.5 6.5 5.5Z"
-                              fill="black"/>
-                        <path d="M9.5 6C9.5 5.72386 9.27614 5.5 9 5.5C8.72386 5.5 8.5 5.72386 8.5 6V12C8.5 12.2761 8.72386 12.5 9 12.5C9.27614 12.5 9.5 12.2761 9.5 12V6Z"
-                              fill="black"/>
-                        <path fill-rule="evenodd" clip-rule="evenodd"
-                              d="M13 3C13 3.55228 12.5523 4 12 4H11.5V13C11.5 14.1046 10.6046 15 9.5 15H3.5C2.39543 15 1.5 14.1046 1.5 13V4H1C0.447715 4 0 3.55228 0 3V2C0 1.44772 0.447715 1 1 1H4.5C4.5 0.447715 4.94772 0 5.5 0H7.5C8.05229 0 8.5 0.447715 8.5 1H12C12.5523 1 13 1.44772 13 2V3ZM2.61803 4L2.5 4.05902V13C2.5 13.5523 2.94772 14 3.5 14H9.5C10.0523 14 10.5 13.5523 10.5 13V4.05902L10.382 4H2.61803ZM1 3V2H12V3H1Z"
-                              fill="black"/>
-                    </svg>
-                </td>
-                <td>
-                    <a href="#/edit-item">
-                        <svg style="margin-left: 10px" width="16" height="16" viewBox="0 0 16 16"
-                             fill="none"
-                             xmlns="http://www.w3.org/2000/svg">
-                            <path d="M12.1465 0.146447C12.3417 -0.0488155 12.6583 -0.0488155 12.8536 0.146447L15.8536 3.14645C16.0488 3.34171 16.0488 3.65829 15.8536 3.85355L5.85357 13.8536C5.80569 13.9014 5.74858 13.9391 5.68571 13.9642L0.68571 15.9642C0.500001 16.0385 0.287892 15.995 0.146461 15.8536C0.00502989 15.7121 -0.0385071 15.5 0.0357762 15.3143L2.03578 10.3143C2.06092 10.2514 2.09858 10.1943 2.14646 10.1464L12.1465 0.146447ZM11.2071 2.5L13.5 4.79289L14.7929 3.5L12.5 1.20711L11.2071 2.5ZM12.7929 5.5L10.5 3.20711L4.00001 9.70711V10H4.50001C4.77616 10 5.00001 10.2239 5.00001 10.5V11H5.50001C5.77616 11 6.00001 11.2239 6.00001 11.5V12H6.29291L12.7929 5.5ZM3.03167 10.6755L2.92614 10.781L1.39754 14.6025L5.21903 13.0739L5.32456 12.9683C5.13496 12.8973 5.00001 12.7144 5.00001 12.5V12H4.50001C4.22387 12 4.00001 11.7761 4.00001 11.5V11H3.50001C3.28561 11 3.10272 10.865 3.03167 10.6755Z"
-                                  fill="black"/>
-                        </svg>
-                    </a>
-                </td>
-            </tr>
+            <tbody id="load-table">
+            <!--            <tr>-->
+            <!--                <th scope="row">1</th>-->
+            <!--                <td style="color: green">Доход</td>-->
+            <!--                <td>Otto</td>-->
+            <!--                <td>1000$</td>-->
+            <!--                <td>01.11.2025</td>-->
+            <!--                <td>нету</td>-->
+            <!--                <td>-->
+            <!--                    <svg data-bs-toggle="modal" data-bs-target="#staticBackdrop" width="13" height="15"-->
+            <!--                         viewBox="0 0 13 15" fill="none"-->
+            <!--                         xmlns="http://www.w3.org/2000/svg">-->
+            <!--                        <path d="M4 5.5C4.27614 5.5 4.5 5.72386 4.5 6V12C4.5 12.2761 4.27614 12.5 4 12.5C3.72386 12.5 3.5 12.2761 3.5 12V6C3.5 5.72386 3.72386 5.5 4 5.5Z"-->
+            <!--                              fill="black"/>-->
+            <!--                        <path d="M6.5 5.5C6.77614 5.5 7 5.72386 7 6V12C7 12.2761 6.77614 12.5 6.5 12.5C6.22386 12.5 6 12.2761 6 12V6C6 5.72386 6.22386 5.5 6.5 5.5Z"-->
+            <!--                              fill="black"/>-->
+            <!--                        <path d="M9.5 6C9.5 5.72386 9.27614 5.5 9 5.5C8.72386 5.5 8.5 5.72386 8.5 6V12C8.5 12.2761 8.72386 12.5 9 12.5C9.27614 12.5 9.5 12.2761 9.5 12V6Z"-->
+            <!--                              fill="black"/>-->
+            <!--                        <path fill-rule="evenodd" clip-rule="evenodd"-->
+            <!--                              d="M13 3C13 3.55228 12.5523 4 12 4H11.5V13C11.5 14.1046 10.6046 15 9.5 15H3.5C2.39543 15 1.5 14.1046 1.5 13V4H1C0.447715 4 0 3.55228 0 3V2C0 1.44772 0.447715 1 1 1H4.5C4.5 0.447715 4.94772 0 5.5 0H7.5C8.05229 0 8.5 0.447715 8.5 1H12C12.5523 1 13 1.44772 13 2V3ZM2.61803 4L2.5 4.05902V13C2.5 13.5523 2.94772 14 3.5 14H9.5C10.0523 14 10.5 13.5523 10.5 13V4.05902L10.382 4H2.61803ZM1 3V2H12V3H1Z"-->
+            <!--                              fill="black"/>-->
+            <!--                    </svg>-->
+            <!--                </td>-->
+            <!--                <td>-->
+            <!--                    <a href="#/edit-item">-->
+            <!--                        <svg style="margin-left: 10px" width="16" height="16" viewBox="0 0 16 16"-->
+            <!--                             fill="none"-->
+            <!--                             xmlns="http://www.w3.org/2000/svg">-->
+            <!--                            <path d="M12.1465 0.146447C12.3417 -0.0488155 12.6583 -0.0488155 12.8536 0.146447L15.8536 3.14645C16.0488 3.34171 16.0488 3.65829 15.8536 3.85355L5.85357 13.8536C5.80569 13.9014 5.74858 13.9391 5.68571 13.9642L0.68571 15.9642C0.500001 16.0385 0.287892 15.995 0.146461 15.8536C0.00502989 15.7121 -0.0385071 15.5 0.0357762 15.3143L2.03578 10.3143C2.06092 10.2514 2.09858 10.1943 2.14646 10.1464L12.1465 0.146447ZM11.2071 2.5L13.5 4.79289L14.7929 3.5L12.5 1.20711L11.2071 2.5ZM12.7929 5.5L10.5 3.20711L4.00001 9.70711V10H4.50001C4.77616 10 5.00001 10.2239 5.00001 10.5V11H5.50001C5.77616 11 6.00001 11.2239 6.00001 11.5V12H6.29291L12.7929 5.5ZM3.03167 10.6755L2.92614 10.781L1.39754 14.6025L5.21903 13.0739L5.32456 12.9683C5.13496 12.8973 5.00001 12.7144 5.00001 12.5V12H4.50001C4.22387 12 4.00001 11.7761 4.00001 11.5V11H3.50001C3.28561 11 3.10272 10.865 3.03167 10.6755Z"-->
+            <!--                                  fill="black"/>-->
+            <!--                        </svg>-->
+            <!--                    </a>-->
+            <!--                </td>-->
+            <!--            </tr>-->
+            <!--            <tr>-->
+            <!--                <th scope="row">2</th>-->
+            <!--                <td style="color: red">Расход</td>-->
+            <!--                <td>Thornton</td>-->
+            <!--                <td>500$</td>-->
+            <!--                <td>01.11.2025</td>-->
+            <!--                <td>нету</td>-->
+            <!--                <td>-->
+            <!--                    <svg data-bs-toggle="modal" data-bs-target="#staticBackdrop" width="13" height="15"-->
+            <!--                         viewBox="0 0 13 15" fill="none"-->
+            <!--                         xmlns="http://www.w3.org/2000/svg">-->
+            <!--                        <path d="M4 5.5C4.27614 5.5 4.5 5.72386 4.5 6V12C4.5 12.2761 4.27614 12.5 4 12.5C3.72386 12.5 3.5 12.2761 3.5 12V6C3.5 5.72386 3.72386 5.5 4 5.5Z"-->
+            <!--                              fill="black"/>-->
+            <!--                        <path d="M6.5 5.5C6.77614 5.5 7 5.72386 7 6V12C7 12.2761 6.77614 12.5 6.5 12.5C6.22386 12.5 6 12.2761 6 12V6C6 5.72386 6.22386 5.5 6.5 5.5Z"-->
+            <!--                              fill="black"/>-->
+            <!--                        <path d="M9.5 6C9.5 5.72386 9.27614 5.5 9 5.5C8.72386 5.5 8.5 5.72386 8.5 6V12C8.5 12.2761 8.72386 12.5 9 12.5C9.27614 12.5 9.5 12.2761 9.5 12V6Z"-->
+            <!--                              fill="black"/>-->
+            <!--                        <path fill-rule="evenodd" clip-rule="evenodd"-->
+            <!--                              d="M13 3C13 3.55228 12.5523 4 12 4H11.5V13C11.5 14.1046 10.6046 15 9.5 15H3.5C2.39543 15 1.5 14.1046 1.5 13V4H1C0.447715 4 0 3.55228 0 3V2C0 1.44772 0.447715 1 1 1H4.5C4.5 0.447715 4.94772 0 5.5 0H7.5C8.05229 0 8.5 0.447715 8.5 1H12C12.5523 1 13 1.44772 13 2V3ZM2.61803 4L2.5 4.05902V13C2.5 13.5523 2.94772 14 3.5 14H9.5C10.0523 14 10.5 13.5523 10.5 13V4.05902L10.382 4H2.61803ZM1 3V2H12V3H1Z"-->
+            <!--                              fill="black"/>-->
+            <!--                    </svg>-->
+            <!--                </td>-->
+            <!--                <td>-->
+            <!--                    <a href="#/edit-item">-->
+            <!--                        <svg style="margin-left: 10px" width="16" height="16" viewBox="0 0 16 16"-->
+            <!--                             fill="none"-->
+            <!--                             xmlns="http://www.w3.org/2000/svg">-->
+            <!--                            <path d="M12.1465 0.146447C12.3417 -0.0488155 12.6583 -0.0488155 12.8536 0.146447L15.8536 3.14645C16.0488 3.34171 16.0488 3.65829 15.8536 3.85355L5.85357 13.8536C5.80569 13.9014 5.74858 13.9391 5.68571 13.9642L0.68571 15.9642C0.500001 16.0385 0.287892 15.995 0.146461 15.8536C0.00502989 15.7121 -0.0385071 15.5 0.0357762 15.3143L2.03578 10.3143C2.06092 10.2514 2.09858 10.1943 2.14646 10.1464L12.1465 0.146447ZM11.2071 2.5L13.5 4.79289L14.7929 3.5L12.5 1.20711L11.2071 2.5ZM12.7929 5.5L10.5 3.20711L4.00001 9.70711V10H4.50001C4.77616 10 5.00001 10.2239 5.00001 10.5V11H5.50001C5.77616 11 6.00001 11.2239 6.00001 11.5V12H6.29291L12.7929 5.5ZM3.03167 10.6755L2.92614 10.781L1.39754 14.6025L5.21903 13.0739L5.32456 12.9683C5.13496 12.8973 5.00001 12.7144 5.00001 12.5V12H4.50001C4.22387 12 4.00001 11.7761 4.00001 11.5V11H3.50001C3.28561 11 3.10272 10.865 3.03167 10.6755Z"-->
+            <!--                                  fill="black"/>-->
+            <!--                        </svg>-->
+            <!--                    </a>-->
+            <!--                </td>-->
+            <!--            </tr>-->
+            <!--            <tr>-->
+            <!--                <th scope="row">3</th>-->
+            <!--                <td style="color: red"> Расход</td>-->
+            <!--                <td>Thornton</td>-->
+            <!--                <td>10$</td>-->
+            <!--                <td>01.11.2025</td>-->
+            <!--                <td>нету</td>-->
+            <!--                <td>-->
+            <!--                    <svg data-bs-toggle="modal" data-bs-target="#staticBackdrop" width="13" height="15"-->
+            <!--                         viewBox="0 0 13 15" fill="none"-->
+            <!--                         xmlns="http://www.w3.org/2000/svg">-->
+            <!--                        <path d="M4 5.5C4.27614 5.5 4.5 5.72386 4.5 6V12C4.5 12.2761 4.27614 12.5 4 12.5C3.72386 12.5 3.5 12.2761 3.5 12V6C3.5 5.72386 3.72386 5.5 4 5.5Z"-->
+            <!--                              fill="black"/>-->
+            <!--                        <path d="M6.5 5.5C6.77614 5.5 7 5.72386 7 6V12C7 12.2761 6.77614 12.5 6.5 12.5C6.22386 12.5 6 12.2761 6 12V6C6 5.72386 6.22386 5.5 6.5 5.5Z"-->
+            <!--                              fill="black"/>-->
+            <!--                        <path d="M9.5 6C9.5 5.72386 9.27614 5.5 9 5.5C8.72386 5.5 8.5 5.72386 8.5 6V12C8.5 12.2761 8.72386 12.5 9 12.5C9.27614 12.5 9.5 12.2761 9.5 12V6Z"-->
+            <!--                              fill="black"/>-->
+            <!--                        <path fill-rule="evenodd" clip-rule="evenodd"-->
+            <!--                              d="M13 3C13 3.55228 12.5523 4 12 4H11.5V13C11.5 14.1046 10.6046 15 9.5 15H3.5C2.39543 15 1.5 14.1046 1.5 13V4H1C0.447715 4 0 3.55228 0 3V2C0 1.44772 0.447715 1 1 1H4.5C4.5 0.447715 4.94772 0 5.5 0H7.5C8.05229 0 8.5 0.447715 8.5 1H12C12.5523 1 13 1.44772 13 2V3ZM2.61803 4L2.5 4.05902V13C2.5 13.5523 2.94772 14 3.5 14H9.5C10.0523 14 10.5 13.5523 10.5 13V4.05902L10.382 4H2.61803ZM1 3V2H12V3H1Z"-->
+            <!--                              fill="black"/>-->
+            <!--                    </svg>-->
+            <!--                </td>-->
+            <!--                <td>-->
+            <!--                    <a href="#/edit-item">-->
+            <!--                        <svg style="margin-left: 10px" width="16" height="16" viewBox="0 0 16 16"-->
+            <!--                             fill="none"-->
+            <!--                             xmlns="http://www.w3.org/2000/svg">-->
+            <!--                            <path d="M12.1465 0.146447C12.3417 -0.0488155 12.6583 -0.0488155 12.8536 0.146447L15.8536 3.14645C16.0488 3.34171 16.0488 3.65829 15.8536 3.85355L5.85357 13.8536C5.80569 13.9014 5.74858 13.9391 5.68571 13.9642L0.68571 15.9642C0.500001 16.0385 0.287892 15.995 0.146461 15.8536C0.00502989 15.7121 -0.0385071 15.5 0.0357762 15.3143L2.03578 10.3143C2.06092 10.2514 2.09858 10.1943 2.14646 10.1464L12.1465 0.146447ZM11.2071 2.5L13.5 4.79289L14.7929 3.5L12.5 1.20711L11.2071 2.5ZM12.7929 5.5L10.5 3.20711L4.00001 9.70711V10H4.50001C4.77616 10 5.00001 10.2239 5.00001 10.5V11H5.50001C5.77616 11 6.00001 11.2239 6.00001 11.5V12H6.29291L12.7929 5.5ZM3.03167 10.6755L2.92614 10.781L1.39754 14.6025L5.21903 13.0739L5.32456 12.9683C5.13496 12.8973 5.00001 12.7144 5.00001 12.5V12H4.50001C4.22387 12 4.00001 11.7761 4.00001 11.5V11H3.50001C3.28561 11 3.10272 10.865 3.03167 10.6755Z"-->
+            <!--                                  fill="black"/>-->
+            <!--                        </svg>-->
+            <!--                    </a>-->
+            <!--                </td>-->
+            <!--            </tr>-->
             </tbody>
         </table>
     </div>
@@ -325,7 +370,8 @@
             </div>
             <!--                <div class="modal-footer">-->
             <div class="modal-body mb-2">
-                <button type="button" class="btn btn-success" data-bs-dismiss="modal">Да, удалить</button>
+                <button id="deleteModalItem" type="button" class="btn btn-success" data-bs-dismiss="modal">Да, удалить
+                </button>
                 <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Не удалять</button>
             </div>
         </div>

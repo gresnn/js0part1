@@ -2,7 +2,7 @@
 <div class="container-fluid">
     <div class="row">
         <div class="container my-sidebar col-1 ps-0 pe-0">
-            <div class="my-left-sidebar d-flex flex-column flex-shrink-0 my-border vh-100 ">
+            <div class="my-left-sidebar d-flex flex-column flex-shrink-0 my-border vh-100">
                 <div class="d-flex my-bottom-border">
                     <a href="#/" class="brand-link" style="margin: 20px auto;">
                         <img src="../static/images/logo-js0.png" alt="Logo" class="brand-image">
@@ -91,7 +91,8 @@
 
                     </li>
                 </ul>
-                <div class="p-3">Баланс: <span class="ms-2">500 $</span></div>
+                <div id="1" class="mt-auto">
+                <div class="p-3">Баланс: <span id="userAmount" class="ms-2">500</span><span class="ms-2">₽</span></div>
                 <div class="nav-item dropdown my-top-border p-3" data-bs-theme="light">
                     <div class="d-flex align-items-center link-body-emphasis text-decoration-none"
                          data-bs-toggle="dropdown" aria-expanded="false">
@@ -100,10 +101,11 @@
                     </div>
                     <ul class="dropdown-menu w-100 shadow" aria-labelledby="dropdownMenuButtonLight">
                         <!--                    <ul class="dropdown-menu w-100 shadow">-->
-                        <li><a class="dropdown-item" href="#/sign-in">LogOut</a></li>
+                        <li><a class="dropdown-item" href="#/sign-in">Выход</a></li>
 <!--                        <li><a class="dropdown-item" href="#/sign-up">SignUp</a></li>-->
                         <!--                        <li><a class="dropdown-item" href="#">Расходы2</a></li>-->
                     </ul>
+                </div>
                 </div>
             </div>
         </div>

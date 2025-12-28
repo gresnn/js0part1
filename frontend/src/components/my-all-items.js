@@ -1,30 +1,5 @@
-import {PieChart} from "./pie-chart.js";
-export class MinePage {
-    // Храним экземпляр диаграммы как свойство класса
-    _pieChartInstance = null;
-    _pieTwoChartInstance = null;
-
+export class MyAllItems {
     constructor() {
-        document.getElementById('myPieChartText').innerHTML = `
-            <div class="d-flex gap-2 py-2 mt-0 text-center justify-content-center align-items-center my-circle">
-            <canvas id="myPieChart" width="450" height="450"></canvas>
-        </div>`
-
-
-        document.getElementById('myPieChart2Text').innerHTML = `
-            <div class="d-flex gap-2 py-2 mt-0 text-center justify-content-center align-items-center my-circle">
-            <canvas id="myPieChart2" width="450" height="450"></canvas>
-        </div>`
-        document.getElementById('todayMobileText').hidden = true;
-
-
-        this.initCalendar();
-        // this.initIncomePie(); todayMobileText
-        // this.initOutcomePie();
-        // this.initIncomePie();
-        // this.initOutcomePie();
-    }
-    initCalendar() {
 
         this.list = [];
         // sessionStorage.setItem('dateFrom','');
@@ -39,49 +14,32 @@ export class MinePage {
         dayElement.classList.remove('btn-today-active');
         const weekElement = document.getElementById('week');
         // weekElement.classList.add('btn-today-active');
-        weekElement.classList.remove('btn-today-active');
+        // weekElement.classList.remove('btn-today-active');
         const monthElement = document.getElementById('month');
-        monthElement.classList.remove('btn-today-active');
+        // monthElement.classList.remove('btn-today-active');
         const yearElement = document.getElementById('year');
-        yearElement.classList.remove('btn-today-active');
+        // yearElement.classList.remove('btn-today-active');
         const allElement = document.getElementById('all');
-        allElement.classList.remove('btn-today-active');
+        // allElement.classList.remove('btn-today-active');
+
 
         const dayElementM = document.getElementById('todayM');
         // dayElement.classList.add('btn-today-active');
         dayElementM.classList.remove('btn-today-active');
         const weekElementM = document.getElementById('weekM');
         // weekElement.classList.add('btn-today-active');
-        weekElementM.classList.remove('btn-today-active');
+        // weekElementM.classList.remove('btn-today-active');
         const monthElementM = document.getElementById('monthM');
-        monthElementM.classList.remove('btn-today-active');
+        // monthElementM.classList.remove('btn-today-active');
         const yearElementM = document.getElementById('yearM');
-        yearElement.classList.remove('btn-today-active');
+        // yearElement.classList.remove('btn-today-active');
         const allElementM = document.getElementById('allM');
-        allElementM.classList.remove('btn-today-active');
+        // allElementM.classList.remove('btn-today-active');
         const dateFromM = document.getElementById('dateFromM');
         const dateToM = document.getElementById('dateToM');
 // Функция обновления отображения дат (можно адаптировать под интерфейс)
         function updateDateDisplay(dateFrom, dateTo, period) {
-            // if (sessionStorage.getItem('dateFrom') > sessionStorage.getItem('dateTo')) {
-            //     alert(sessionStorage.getItem('dateFrom'));
-            //     alert(sessionStorage.getItem('dateTo'));
-            //     alert('ДАТА НАЧАЛА ПОЗЖЖЕ ДАТЫ КОНЦА !')
-            //     return
-            // }
-            // sessionStorage.setItem('dateFrom', '');
-            // sessionStorage.setItem('dateTo', '');
-            // document.getElementById('todayMobileText').hidden = true;
-            document.getElementById('myPieChartText').innerHTML = `
-            <div class="d-flex gap-2 py-2 mt-0 text-center justify-content-center align-items-center my-circle">
-                <canvas id="myPieChart" width="450" height="450"></canvas>
-            </div>`
-
-            document.getElementById('myPieChart2Text').innerHTML = `
-            <div class="d-flex gap-2 py-2 mt-0 text-center justify-content-center align-items-center my-circle">
-               <canvas id="myPieChart2" width="450" height="450"></canvas>
-            </div>`
-            console.log('Текущий диапазон: (' + period + ') - c ' + dateFrom + ' по ' + dateTo);
+            // console.log('Текущий диапазон: (' + period + ') - c ' + dateFrom + ' по ' + dateTo);
             // console.log(dateFrom);
             // console.log(dateTo);
             sessionStorage.setItem('dateFrom', dateFrom);
@@ -92,13 +50,10 @@ export class MinePage {
             document.getElementById('intervalM').disabled = true;
             document.getElementById('dateFromBtn').textContent = 'с   Дата';
             document.getElementById('dateToBtn').textContent = 'по   Дата';
-            // document.getElementById('intervalM').disabled = true;
-            // document.getElementById('dateFromBtnM').textContent = 'с   Дата';
-            // document.getElementById('dateToBtnM').textContent = 'по   Дата';
         }
 
 
-        // Обработчики кликов Сегодня
+// Обработчики кликов Сегодня
         document.getElementById('today').addEventListener('click', () => {
             // alert('dayElement.classList.add(\'btn-today-active\');')
             dayElement.classList.add('btn-today-active');
@@ -108,9 +63,7 @@ export class MinePage {
             allElement.classList.remove('btn-today-active');
             document.getElementById('dateFromBtn').classList.remove('btn-today-active');
             document.getElementById('dateToBtn').classList.remove('btn-today-active');
-            // document.getElementById('todayMobileText').hidden = false;
-            // document.getElementById('todayMobileText').innerText = 'Сегодня';
-            // document.getElementById('todayMobileText').classList.add('btn-today-active');
+
             function getTodayMoscow() {
                 const now = new Date();
                 const options = {
@@ -128,7 +81,7 @@ export class MinePage {
             const dateTo = getTodayMoscow();
             const period = 'день';
             updateDateDisplay(dateFrom, dateTo, period);
-            this.getList();
+            this.init();
 
         });
 
@@ -162,13 +115,11 @@ export class MinePage {
             const dateTo = getTodayMoscow();
             const period = 'день';
             updateDateDisplay(dateFrom, dateTo, period);
-            this.getList();
+            this.init();
 
         });
 
-
-
-        // Обработчики кликов НЕДЕЛЯ
+// Обработчики кликов НЕДЕЛЯ
         document.getElementById('week').addEventListener('click', () => {;
             dayElement.classList.remove('btn-today-active');
             weekElement.classList.add('btn-today-active');
@@ -210,7 +161,7 @@ export class MinePage {
             // console.log('Конец недели (вс):', dateTo);   // '2025-12-21'
             const period = 'неделя';
             updateDateDisplay(dateFrom, dateTo, period);
-            this.getList();
+            this.init();
         });
 
 
@@ -258,11 +209,11 @@ export class MinePage {
             // console.log('Конец недели (вс):', dateTo);   // '2025-12-21'
             const period = 'неделя';
             updateDateDisplay(dateFrom, dateTo, period);
-            this.getList();
+            this.init();
         });
 
 
-        // Обработчики кликов МЕСЯЦ
+// Обработчики кликов МЕСЯЦ
         document.getElementById('month').addEventListener('click', () => {
             dayElement.classList.remove('btn-today-active');
             weekElement.classList.remove('btn-today-active');
@@ -286,7 +237,7 @@ export class MinePage {
             // console.log(dateTo); // '2025-12-31'
             const period = 'месяц';
             updateDateDisplay(dateFrom, dateTo, period);
-            this.getList();
+            this.init();
         });
 
         // Обработчики мобильный МЕСЯЦ
@@ -315,9 +266,8 @@ export class MinePage {
             // console.log(dateTo); // '2025-12-31'
             const period = 'месяц';
             updateDateDisplay(dateFrom, dateTo, period);
-            this.getList();
+            this.init();
         });
-
 
 
         // Обработчики кликов ГОД
@@ -335,9 +285,8 @@ export class MinePage {
             const dateTo = `${new Date().getFullYear()}-12-31`;
             const period = 'ГОД';
             updateDateDisplay(dateFrom, dateTo, period);
-            this.getList();
+            this.init();
         });
-
 
         // Обработчики мобильный ГОД
         document.getElementById('yearM').addEventListener('click', () => {
@@ -356,9 +305,8 @@ export class MinePage {
             const dateTo = `${new Date().getFullYear()}-12-31`;
             const period = 'ГОД';
             updateDateDisplay(dateFrom, dateTo, period);
-            this.getList();
+            this.init();
         });
-
 
         // Обработчики кликов ВЕЧНОСТЬ
         document.getElementById('all').addEventListener('click', () => {
@@ -373,8 +321,9 @@ export class MinePage {
             const dateTo = '2099-12-31';
             const period = 'вечность';
             updateDateDisplay(dateFrom, dateTo, period);
-            this.getList();
+            this.init();
         });
+
 
         // Обработчики мобильный ВЕЧНОСТЬ
         document.getElementById('allM').addEventListener('click', () => {
@@ -391,7 +340,7 @@ export class MinePage {
             const dateTo = '2099-12-31';
             const period = 'вечность';
             updateDateDisplay(dateFrom, dateTo, period);
-            this.getList();
+            this.init();
         });
 
 
@@ -407,23 +356,13 @@ export class MinePage {
         }
 
         document.getElementById('interval').addEventListener('click', () => {
-            document.getElementById('myPieChartText').innerHTML = `
-            <div class="d-flex gap-2 py-2 mt-0 text-center justify-content-center align-items-center my-circle">
-            <canvas id="myPieChart" width="450" height="450"></canvas>
-             </div>`
-
-            document.getElementById('myPieChart2Text').innerHTML = `
-            <div class="d-flex gap-2 py-2 mt-0 text-center justify-content-center align-items-center my-circle">
-            <canvas id="myPieChart2" width="450" height="450"></canvas>
-            </div>`
+            // alert('intervalintervalintervalintervalinterval !');
             dayElement.classList.remove('btn-today-active');
             weekElement.classList.remove('btn-today-active');
             monthElement.classList.remove('btn-today-active');
             yearElement.classList.remove('btn-today-active');
             allElement.classList.remove('btn-today-active');
             document.getElementById('interval').classList.add('btn-today-active');
-            // document.getElementById('interval').classList.remove('btn-today-danger');
-            // document.getElementById('intervalM').classList.add('btn-today-active');
             if (!sessionStorage.getItem('dateFrom') || !sessionStorage.getItem('dateTo')) {
                 alert('НЕТ ДАТЫ НАЧАЛА ИЛИ ДАТЫ КОНЦА !');
                 document.getElementById('todayMobileText').classList.add('text-danger');
@@ -432,47 +371,22 @@ export class MinePage {
             }
 
             if (sessionStorage.getItem('dateFrom') > sessionStorage.getItem('dateTo')) {
-
                 alert('ДАТА НАЧАЛА ПОЗЖЖЕ ДАТЫ КОНЦА !');
                 document.getElementById('interval').classList.remove('btn-today-active');
                 // document.getElementById('interval').classList.add('btn-today-danger');
                 document.getElementById('interval').disabled = true;
-                // document.getElementById('intervalM').classList.add('text-danger');
-                // sessionStorage.setItem('dateFrom', '');
-                // sessionStorage.setItem('dateTo', '');
-                // Либо выводим сообщение
-                document.getElementById('myPieChartText').innerHTML = '<div class="d-flex gap-2 py-2 mt-0 text-center text-danger justify-content-center align-items-center my-circle">Нет данных для отображения</div>';
-                // Либо выводим сообщение
-                document.getElementById('myPieChart2Text').innerHTML = '<div class="d-flex gap-2 py-2 mt-0 text-center text-danger justify-content-center align-items-center my-circle">Нет данных для отображения</div>';
-                // 1. Если диаграмма уже существует — уничтожаем её
-                if (this._pieChartInstance) {
-                    this._pieChartInstance.destroy();
-                    this._pieChartInstance = null;
-                }
-                // 1. Если диаграмма уже существует — уничтожаем её
-                if (this._pieTwoChartInstance) {
-                    this._pieTwoChartInstance.destroy();
-                    this._pieTwoChartInstance = null;
-                }
                 return
             }
 
-            this.getList();
+            this.init();
         });
 
 
         document.getElementById('intervalM').addEventListener('click', () => {
+            // alert('НЕТ intervalMintervalMintervalMintervalM !');
+
             document.getElementById('todayMobileText').classList.remove('text-danger');
-            document.getElementById('myPieChartText').innerHTML = `
-            <div class="d-flex gap-2 py-2 mt-0 text-center justify-content-center align-items-center my-circle">
-            <canvas id="myPieChart" width="450" height="450"></canvas>
-        </div>`
 
-
-            document.getElementById('myPieChart2Text').innerHTML = `
-            <div class="d-flex gap-2 py-2 mt-0 text-center justify-content-center align-items-center my-circle">
-            <canvas id="myPieChart2" width="450" height="450"></canvas>
-        </div>`
             dayElementM.classList.remove('btn-today-active');
             weekElementM.classList.remove('btn-today-active');
             monthElementM.classList.remove('btn-today-active');
@@ -483,42 +397,24 @@ export class MinePage {
             // Здесь можно показать поля для ручного ввода дат
             document.getElementById('todayMobileText').hidden = false;
             document.getElementById('todayMobileText').innerText = 'Интервал c ' + sessionStorage.getItem('dateFrom') + ' по ' + sessionStorage.getItem('dateTo');
-        if (!sessionStorage.getItem('dateFrom') || !sessionStorage.getItem('dateTo')) {
-            alert('НЕТ ДАТЫ НАЧАЛА ИЛИ ДАТЫ КОНЦА !');
-            document.getElementById('todayMobileText').classList.add('text-danger');
-            document.getElementById('intervalM').disabled = true;
-            return;
-        }
+            if (!sessionStorage.getItem('dateFrom') || !sessionStorage.getItem('dateTo')) {
+                alert('НЕТ ДАТЫ НАЧАЛА ИЛИ ДАТЫ КОНЦА !');
+                document.getElementById('todayMobileText').classList.add('text-danger');
+                document.getElementById('intervalM').disabled = true;
+                return;
+            }
             if (sessionStorage.getItem('dateFrom') > sessionStorage.getItem('dateTo'))  {
-
                 alert('ДАТА НАЧАЛА ПОЗЖЖЕ ДАТЫ КОНЦА !');
                 document.getElementById('todayMobileText').classList.add('text-danger');
                 document.getElementById('intervalM').disabled = true;
-                // sessionStorage.setItem('dateFrom', '');
-                // sessionStorage.setItem('dateTo', '');
-                // Либо выводим сообщение
-                document.getElementById('myPieChartText').innerHTML = '<div class="d-flex gap-2 py-2 mt-0 text-center text-danger justify-content-center align-items-center my-circle">Нет данных для отображения</div>';
-                // Либо выводим сообщение
-                document.getElementById('myPieChart2Text').innerHTML = '<div class="d-flex gap-2 py-2 mt-0 text-center text-danger justify-content-center align-items-center my-circle">Нет данных для отображения</div>';
-                // 1. Если диаграмма уже существует — уничтожаем её
-                if (this._pieChartInstance) {
-                    this._pieChartInstance.destroy();
-                    this._pieChartInstance = null;
-                }
-                // 1. Если диаграмма уже существует — уничтожаем её
-                if (this._pieTwoChartInstance) {
-                    this._pieTwoChartInstance.destroy();
-                    this._pieTwoChartInstance = null;
-                }
                 return
             }
-
-            this.getList();
+            this.init();
         });
+
 
         // Пример обработки кликов по кнопкам: "c" и "по"
         const btn = document.getElementById('dateFromBtn');
-        // const btnM = document.getElementById('dateFromBtnM');
         const input = document.getElementById('dateFrom');
         const inputM = document.getElementById('dateFromM');
 
@@ -529,7 +425,6 @@ export class MinePage {
             yearElement.classList.remove('btn-today-active');
             allElement.classList.remove('btn-today-active');
             btn.classList.add('btn-today-active');
-            document.getElementById('interval').disabled = false;
             input.showPicker(); // Открывает native-календарь
         });
 
@@ -539,10 +434,8 @@ export class MinePage {
             sessionStorage.setItem('dateFrom', input.value);
             // console.log(sessionStorage.getItem('intervalFrom'));
             // console.log(sessionStorage.getItem('intervalTo'));
-            // console.log(sessionStorage.getItem('dateFrom'));
             if (sessionStorage.getItem('intervalFrom') && sessionStorage.getItem('intervalTo')) {
                 document.getElementById('interval').removeAttribute('disabled');
-                // document.getElementById('intervalM').removeAttribute('disabled');
             }
         });
 
@@ -570,7 +463,6 @@ export class MinePage {
         });
 
         const btnTo = document.getElementById('dateToBtn');
-        // const btnToM = document.getElementById('dateToBtnM');
         const inputTo = document.getElementById('dateTo');
         const inputToM = document.getElementById('dateToM');
 
@@ -581,7 +473,6 @@ export class MinePage {
             yearElement.classList.remove('btn-today-active');
             allElement.classList.remove('btn-today-active');
             btnTo.classList.add('btn-today-active');
-            document.getElementById('interval').disabled = false;
             inputTo.showPicker(); // Открывает native-календарь
         });
 
@@ -591,10 +482,8 @@ export class MinePage {
             sessionStorage.setItem('dateTo', inputTo.value);
             // console.log(sessionStorage.getItem('intervalFrom'));
             // console.log(sessionStorage.getItem('intervalTo'));
-            // console.log(sessionStorage.getItem('dateTo'));
             if (sessionStorage.getItem('intervalFrom') && sessionStorage.getItem('intervalTo')) {
                 document.getElementById('interval').removeAttribute('disabled');
-                // document.getElementById('intervalM').removeAttribute('disabled');
             }
         });
 
@@ -621,13 +510,29 @@ export class MinePage {
             }
         });
 
-        this.initListAll();
+        document.getElementById('makeIncome').addEventListener('click', () => {
+            sessionStorage.clear();
+            sessionStorage.setItem('makeItem', 'makeIncome');
+            // console.log('makeIncome');
+            // alert('makeIncome');
+            location.href = '#/new-item';
+        });
+        document.getElementById('makeOutcome').addEventListener('click', () => {
+            sessionStorage.clear();
+            sessionStorage.setItem('makeItem', 'makeOutcome');
+            // console.log('makeOutcome');
+            // alert('makeOutcome');
+            location.href = '#/new-item';
+
+        });
+
+        this.initOne();
     }
-    initListAll() {
+
+    initOne() {
         // alert('initOne()');
         const todayElement = document.getElementById('all');
         const todayElementM = document.getElementById('allM');
-        document.getElementById('interval').classList.remove('btn-today-danger');
         if (todayElementM) {
             todayElementM.click(); // запускаем обработчик клика программно
             todayElementM.classList.add('btn-today-active');
@@ -639,24 +544,24 @@ export class MinePage {
         if (todayElement) {
             todayElement.click(); // запускаем обработчик клика программно
             todayElement.classList.add('btn-today-active');
-            // todayElementM.add('btn-today-active');
             // console.log('Элемент с id="today" // запускаем обработчик клика программно в DOM');
         } else {
             console.error('Элемент с id="today" не найден в DOM');
         }
-        // ★ Дополнительно: убираем класс при уходе мыши (если нужно)
-        //         todayElement.addEventListener('mouseleave', () => {
-        //             todayElement.classList.remove('btn-today-active');
-        //         });
+// ★ Дополнительно: убираем класс при уходе мыши (если нужно)
+//         todayElement.addEventListener('mouseleave', () => {
+//             todayElement.classList.remove('btn-today-active');
+//         });
 
         // document.getElementById('today').click();
     }
-    async getList() {
+
+    async init() {
 
         try {
             let myAccessToken = localStorage.getItem('accessToken');
             let myRefreshToken = localStorage.getItem('refreshToken');
-            let dateFrom = sessionStorage.getItem('dateFrom');
+           let dateFrom = sessionStorage.getItem('dateFrom');
             let dateTo = sessionStorage.getItem('dateTo');
             // console.log(dateFrom);
             // console.log(dateTo);
@@ -675,7 +580,7 @@ export class MinePage {
                     'x-auth-token': myAccessToken,
                 }
             });
-
+            //
             // console.log(response);
             // console.log(response.status);
             // if (response.status === 400) {
@@ -709,7 +614,7 @@ export class MinePage {
                     if (result && !result.error) {
                         localStorage.setItem('accessToken', result.tokens.accessToken);
                         localStorage.setItem('refreshToken', result.tokens.refreshToken);
-                        this.getList();
+                        this.init();
                         // return;
                     }
                 }
@@ -733,36 +638,7 @@ export class MinePage {
                 const result = await response.json();
                 // console.log(result);
                 this.list = result;
-                // console.log(this.list);
-                // alert('ЕСТЬ СПИСОК ОПЕРАЦИЙ!!!!!!!!!!!!!');
-                // if (!this.list || this.list.length === 0) {
-                //     // Скрываем диаграмму (например, через CSS)
-                //     document.getElementById('main-menu').style.display = 'none';
-                //
-                //     // Либо выводим сообщение
-                //     document.getElementById('main-menu').textContent = 'Нет данных для отображения';
-                //
-                //     // Прерываем выполнение
-                //     return;
-                // }
-                const data = this.list;
-                let total = 0;
-                // console.log(data);
-                for (const item of data) {
-                    if (item.type === 'income') {
-                        total += item.amount;
-                    } else if (item.type === 'expense') {
-                        total -= item.amount;
-                    }
-                }
-                // console.log(total); // Выводим итог userAmount
-                let userAmount = document.getElementById('userAmount');
-                // console.log(userAmount); // Выводим итог userAmount
-                userAmount.innerText = total;
-                // alert(total); // Выводим итог userAmount
-                localStorage.setItem('userAmount', total);
-                // this.putAmout();
-                this.getTwoList();
+                this.processLoad();
 
             }
 
@@ -772,438 +648,209 @@ export class MinePage {
         }
     }
 
-    getTwoList() {
-        // alert('начинаем получать два списка !!!');
-        this.incomesTotalList = [];
-        this.expensesTotalList = [];
-        for (const item of this.list) {
+    processLoad() {
+        // alert('начинаем динамически загружать страницу !!!');
+        // console.log(this.list);
+        const listOptionsElement = document.getElementById('load-table');
+        // console.log(listOptionsElement);
+        listOptionsElement.innerHTML = '';
+        let i = 0;
+        let type = 'Доход';
+        let typeColor = 'green';
+        if (this.list && this.list.length > 0) {
+            this.list.forEach(item => {
+                i = i + 1;
+                type = item.type === 'expense' ? 'Расход' : 'Доход';
+                typeColor = item.type === 'expense' ? 'red' : 'green';
+                // Уникальный ID для кнопки редактирования
+                const number = `${i}`;
+                const editButtonId = `btn-item-edit-${item.id}`;
+                const deleteButtonId = `btn-item-delete-${item.id}`;
+                // console.log(editButtonId);
+                // console.log('deleteButtonId   ' + deleteButtonId);
+                const listMainTrElement = document.createElement('tr');
+                listMainTrElement.setAttribute('data-id', item.id);
+                // console.log(listMainTrElement);
+                listMainTrElement.innerHTML = `
+                <th scope="row">${i}</th>
+                <td style="color: ${typeColor}">${type}</td>
+                <td>${item.category}</td>
+                <td>${item.amount}</td>
+                <td>${item.date}</td>
+                <td>${item.comment}</td>
+                <td>
+                    <svg id="${deleteButtonId}" data-bs-toggle="modal" data-bs-target="#staticBackdrop" width="13" height="15"
+                         viewBox="0 0 13 15" fill="none"
+                         xmlns="http://www.w3.org/2000/svg">
+                        <path d="M4 5.5C4.27614 5.5 4.5 5.72386 4.5 6V12C4.5 12.2761 4.27614 12.5 4 12.5C3.72386 12.5 3.5 12.2761 3.5 12V6C3.5 5.72386 3.72386 5.5 4 5.5Z"
+                              fill="black"/>
+                        <path d="M6.5 5.5C6.77614 5.5 7 5.72386 7 6V12C7 12.2761 6.77614 12.5 6.5 12.5C6.22386 12.5 6 12.2761 6 12V6C6 5.72386 6.22386 5.5 6.5 5.5Z"
+                              fill="black"/>
+                        <path d="M9.5 6C9.5 5.72386 9.27614 5.5 9 5.5C8.72386 5.5 8.5 5.72386 8.5 6V12C8.5 12.2761 8.72386 12.5 9 12.5C9.27614 12.5 9.5 12.2761 9.5 12V6Z"
+                              fill="black"/>
+                        <path fill-rule="evenodd" clip-rule="evenodd"
+                              d="M13 3C13 3.55228 12.5523 4 12 4H11.5V13C11.5 14.1046 10.6046 15 9.5 15H3.5C2.39543 15 1.5 14.1046 1.5 13V4H1C0.447715 4 0 3.55228 0 3V2C0 1.44772 0.447715 1 1 1H4.5C4.5 0.447715 4.94772 0 5.5 0H7.5C8.05229 0 8.5 0.447715 8.5 1H12C12.5523 1 13 1.44772 13 2V3ZM2.61803 4L2.5 4.05902V13C2.5 13.5523 2.94772 14 3.5 14H9.5C10.0523 14 10.5 13.5523 10.5 13V4.05902L10.382 4H2.61803ZM1 3V2H12V3H1Z"
+                              fill="black"/>
+                    </svg>
+                </td>
+                <td>
+                    <a id="${editButtonId}">
+                        <svg style="margin-left: 10px" width="16" height="16" viewBox="0 0 16 16"
+                             fill="none"
+                             xmlns="http://www.w3.org/2000/svg">
+                            <path d="M12.1465 0.146447C12.3417 -0.0488155 12.6583 -0.0488155 12.8536 0.146447L15.8536 3.14645C16.0488 3.34171 16.0488 3.65829 15.8536 3.85355L5.85357 13.8536C5.80569 13.9014 5.74858 13.9391 5.68571 13.9642L0.68571 15.9642C0.500001 16.0385 0.287892 15.995 0.146461 15.8536C0.00502989 15.7121 -0.0385071 15.5 0.0357762 15.3143L2.03578 10.3143C2.06092 10.2514 2.09858 10.1943 2.14646 10.1464L12.1465 0.146447ZM11.2071 2.5L13.5 4.79289L14.7929 3.5L12.5 1.20711L11.2071 2.5ZM12.7929 5.5L10.5 3.20711L4.00001 9.70711V10H4.50001C4.77616 10 5.00001 10.2239 5.00001 10.5V11H5.50001C5.77616 11 6.00001 11.2239 6.00001 11.5V12H6.29291L12.7929 5.5ZM3.03167 10.6755L2.92614 10.781L1.39754 14.6025L5.21903 13.0739L5.32456 12.9683C5.13496 12.8973 5.00001 12.7144 5.00001 12.5V12H4.50001C4.22387 12 4.00001 11.7761 4.00001 11.5V11H3.50001C3.28561 11 3.10272 10.865 3.03167 10.6755Z"
+                                  fill="black"/>
+                        </svg>
+                    </a>
+                </td>
+                `;
+
+                listOptionsElement.appendChild(listMainTrElement);
+
+                // Находим кнопку РЕДАКТИРОВАНИЯ и назначаем обработчик
+                const btnElement = document.getElementById(editButtonId);
+                // console.log(btnElement);
+                btnElement.onclick = () => {
+                    sessionStorage.setItem('itemId', JSON.stringify(item.id));
+                    sessionStorage.setItem('typeId', JSON.stringify(item.type));
+                    sessionStorage.setItem('dateId', JSON.stringify(item.date));
+                    sessionStorage.setItem('categoryId', JSON.stringify(item.category));
+                    sessionStorage.setItem('amountId', JSON.stringify(item.amount));
+                    sessionStorage.setItem('commentId', JSON.stringify(item.comment));
+                    location.href = '#/edit-item';
+                    // this.chooseId(item.id);  // Передаем ID элемента
+                };
+                // Находим кнопку УДАЛЕНИЯ и назначаем обработчик
+                const buttonDelete = document.getElementById(deleteButtonId);
+                // console.log(buttonDelete);
+                buttonDelete.onclick = () => {
+                    // 1. Получаем модальное окно и кнопку удаления
+                    const modal = document.getElementById('staticBackdrop');
+                    const deleteModalButton = document.getElementById('deleteModalItem');
+                    deleteModalButton.onclick = () => {
+                        // console.log(item.id, item.category);
+                        alert('ВЫ ТОЛЬКО ЧТО УДАЛИЛИ ЗАПИСЬ НОМЕР ' + number + ' - ' + type + ' - ' + item.category + ' - ' + item.amount + ' - ' + item.date + ' - ' + item.comment);
+                        this.deleteItem(item.id);  // Передаем ID элемента
+                    };                };
+            });
+        }
+
+
+        const data = this.list;
+        let total = 0;
+        // console.log(data);
+        for (const item of data) {
             if (item.type === 'income') {
-                this.incomesTotalList.push({
-                    amount: item.amount,
-                    category: item.category
-                });
+                total += item.amount;
             } else if (item.type === 'expense') {
-                this.expensesTotalList.push({
-                    amount: item.amount,
-                    category: item.category
-                });
+                total -= item.amount;
+            }
+        }
+        // console.log(total); // Выводим итог userAmount
+        let userAmount = document.getElementById('userAmount');
+        // console.log(userAmount); // Выводим итог userAmount
+        userAmount.innerText = total;
+        // alert(total); // Выводим итог userAmount
+        localStorage.setItem('userAmount', total);
+        // this.putAmout();
+        this.putAmout();
+    }
+
+    async deleteItem(elementId) {
+        // console.log(elementId);
+
+        // alert('ОТПРАВЛЯЕМ ЗАПРОС НА СЕРВЕР !!!');
+
+        try {
+            let token = localStorage.getItem('accessToken');
+            // console.log(token);
+
+            if (!token) {
+                console.log('Token not found');
+                return;
             }
 
-        }
-
-        //
-        // console.log('Доходы (объединённые по category):', this.incomesTotalList);
-        // console.log('Расходы (объединённые по category):', this.expensesTotalList);
-
-
-// 1. Считаем общие суммы
-        const totalIncomes = this.incomesTotalList.reduce((sum, item) => sum + item.amount, 0);
-        const totalExpenses = this.expensesTotalList.reduce((sum, item) => sum + item.amount, 0);
-
-// 2. Переводим в проценты с округлением по правилам
-        this.incomesListPercent = this.incomesTotalList.map(item => {
-            const percent = (item.amount / totalIncomes) * 100;
-            const roundedPercent = Math.ceil(percent); // округляем вверх до целого
-            return {
-                amount: item.amount,
-                percent: roundedPercent < 1 ? 1 : roundedPercent, // если <1 → ставим 1
-                category: item.category
-            };
-        });
-
-        this.expensesListPercent = this.expensesTotalList.map(item => {
-            const percent = (item.amount / totalExpenses) * 100;
-            const roundedPercent = Math.ceil(percent); // округляем вверх до целого
-            return {
-                amount: item.amount,
-                percent: roundedPercent < 1 ? 1 : roundedPercent, // если <1 → ставим 1
-                category: item.category
-            };
-        });
-
-
-        function adjustToHundredStrict(arr) {
-            let sum = arr.reduce((s, item) => s + item.percent, 0);
-
-            while (sum > 100) {
-                // Находим максимальный процент
-                const maxIndex = arr.reduce((maxIdx, item, idx) =>
-                        item.percent > arr[maxIdx].percent ? idx : maxIdx,
-                    0
-                );
-
-                arr[maxIndex].percent -= 1;
-                sum -= 1;
-            }
-
-            return arr;
-        }
-
-        this.incomesListPercent = adjustToHundredStrict(this.incomesListPercent);
-        this.expensesListPercent = adjustToHundredStrict(this.expensesListPercent);
-   ///////////////////////////////
-
-
-        function mergeByCategory(arr) {
-            const grouped = {};
-
-            // 1. Группируем по category
-            for (const item of arr) {
-                const key = item.category;
-                if (!grouped[key]) {
-                    grouped[key] = {
-                        amount: 0,
-                        percent: 0,
-                        category: key
-                    };
+            const response = await fetch('http://localhost:3000/api/operations/' + elementId, {
+                method: 'DELETE',
+                headers: {
+                    'Content-type': 'application/json',
+                    'Accept': 'application/json',
+                    'x-auth-token': token,
                 }
-                grouped[key].amount += item.amount;
-                grouped[key].percent += item.percent;
+            });
+
+            // console.log(response);
+            // console.log(response.status);
+
+            if (!response.ok) { // Более короткая проверка статуса
+                alert('Ошибка сервера: ' + response.status);
+                return;
             }
 
-            // 2. Превращаем объект в массив
-            return Object.values(grouped);
+            const result = await response.json();
+            // console.log(result);
+
+            // alert('Данные DELETE !!!!');
+            location.href = '#/all-items';
+            // this.processLoad();
+
+        } catch (error) {
+            console.error('Ошибка запроса:', error);
+            alert('Произошла ошибка при загрузке данных');
         }
 
-// Применяем к доходам и расходам
-        this.incomesListPercent = mergeByCategory(this.incomesListPercent);
-        this.expensesListPercent = mergeByCategory(this.expensesListPercent);
-        //
-        // console.log('Доходы (объединённые по ОБШИМ category):', this.incomesListPercent);
-        // console.log('Расходы (объединённые по ОБЩИМ category):', this.expensesListPercent);
 
+    }
+    async putAmout() {
+        let userAmount = localStorage.getItem('userAmount');
+        // console.log('userAmount   ' + userAmount);
+        // console.log(userTextAmount); // Выводим итог userAmount
+        try {
+            let token = localStorage.getItem('accessToken');
+            // console.log(userAmount);
+            if (!token) {
+                console.log('Token not found');
+                return;
+            }
 
-   /////////////////////////////
-
-        // console.log('Доходы (ПРОЦЕНТЫ С ОКРУГЛЕНИЕМ ):', this.incomesListPercent);
-        // console.log('Расходы (ПРОЦЕНТЫ С ОКРУГЛЕНИЕМ ):', this.expensesListPercent);
-
-
-        /////////////////////
-        // this.chartConfig = {
-        //     type: 'pie',
-        //     data: {
-        //         labels: ['Red', 'Orange', 'Yellow', 'Green', 'Blue'],
-        //         datasets: [{
-        //             data: [40, 15, 15, 15, 15],
-        //             backgroundColor: [
-        //                 'rgb(255, 0, 0)',
-        //                 'rgb(255, 165, 0)',
-        //                 'rgb(255, 255, 0)',
-        //                 'rgb(0, 128, 0)',
-        //                 'rgb(0, 0, 255)'
-        //             ],
-        //             hoverBackgroundColor: [
-        //                 'rgb(255, 0, 0, 0.6)',
-        //                 'rgb(255, 165, 0, 0.6)',
-        //                 'rgb(255, 255, 0, 0.6)',
-        //                 'rgb(0, 128, 0, 0.6)',
-        //                 'rgb(0, 0, 255, 0.6)'
-        //             ]
-        //         }]
-        //     },
-        //     options: {
-        //         responsive: true,
-        //         maintainAspectRatio: false,
-        //         animation: {
-        //             animateRotate: true,
-        //             animateScale: true,
-        //             duration: 1500
-        //         },
-        //         plugins: {
-        //             legend: {
-        //                 position: 'top',
-        //             },
-        //             title: {
-        //                 display: true,
-        //                 text: 'Доходы'
-        //             }
-        //         }
-        //     }
-        //
-        // };
-  ////////////////////////
-        const dataArray = this.incomesListPercent; // Подсказки для this.chartConfig
-        this.chartConfig = {
-            type: 'pie',
-            data: {
-                labels: this.incomesListPercent.map(item => item.category),
-                datasets: [{
-                    data: this.incomesListPercent.map(item => item.percent),
-                    backgroundColor: [
-                        'rgb(255, 0, 0)',
-                        'rgb(255, 165, 0)',
-                        'rgb(255, 255, 0)',
-                        'rgb(0, 128, 0)',
-                        'rgb(0, 0, 255)'
-                    ],
-                    hoverBackgroundColor: [
-                        'rgba(255, 0, 0, 0.6)',
-                        'rgba(255, 165, 0, 0.6)',
-                        'rgba(255, 255, 0, 0.6)',
-                        'rgba(0, 128, 0, 0.6)',
-                        'rgba(0, 0, 255, 0.6)'
-                    ]
-                }]
-            },
-            options: {
-                responsive: true,
-                maintainAspectRatio: false,
-                animation: {
-                    animateRotate: true,
-                    animateScale: true,
-                    duration: 1500
+            const response = await fetch('http://localhost:3000/api/balance', {
+                method: 'PUT',
+                headers: {
+                    'Content-type': 'application/json',
+                    'Accept': 'application/json',
+                    'x-auth-token': token,
                 },
-                plugins: {
-                    legend: {
-                        position: 'top',
-                    },
-                    title: {
-                        display: true,
-                        text: 'Доходы'
-                    },
-                    tooltip: {
-                        // Настройка внешнего вида подсказки
-                        backgroundColor: 'rgba(0, 0, 0, 0.8)',
-                        titleColor: '#fff',
-                        bodyColor: '#fff',
-                        borderColor: 'rgba(255, 255, 255, 0.3)',
-                        borderWidth: 1,
-                        padding: 12,
-                        cornerRadius: 8,
+                body: JSON.stringify({
+                    newBalance: userAmount,
+                })
+            });
+            //
+            // console.log(response);
+            // console.log(response.status);
 
-                        // Форматирование текста подсказки
-                        callbacks: {
-                            label: function(context) {
-                                const item = dataArray[context.dataIndex];
-                                return [
-                                    `Категория: ${item.category}`,
-                                    `Сумма: ${item.amount.toLocaleString()} ₽`,
-                                    `Доля: ${item.percent}%`
-                                ];
-                            },
-
-                            // Можно изменить заголовок подсказки
-                            title: function() {
-                                return 'Детализация:';
-                            }
-                        }
-                    }
-                }
+            if (!response.ok) { // Более короткая проверка статуса
+                alert('Ошибка сервера: ' + response.status);
+                return;
             }
-        };
 
-////////////////////////
-// // Извлекаем labels и data из this.array
-//         const labels = this.incomesListPercent.map(item => item.category);
-//         const data = this.incomesListPercent.map(item => item.percent);
-//
-// // Обновляем конфигурацию диаграммы
-//         this.chartConfig.data.labels = labels;
-//         this.chartConfig.data.datasets[0].data = data;
+            const result = await response.json();
+            // console.log(result);
 
+            // alert('Данные DELETE !!!!');
+            // location.href = '#/all-items';
+            // this.processLoad();
 
-        function generateColors(count) {
-            const colors = [];
-            for (let i = 0; i < count; i++) {
-                // Равномерно распределяем оттенок по цветовому кругу (0–360°)
-                const hue = (i * 360) / count;
-                colors.push(`hsl(${hue}, 70%, 60%)`);
-            }
-            return colors;
+        } catch (error) {
+            console.error('Ошибка запроса:', error);
+            alert('Произошла ошибка при загрузке данных');
         }
-
-        function generateHoverColors(colors) {
-            return colors.map(color =>
-                color.replace('hsl', 'hsla').replace(')', ', 0.6)')
-            );
-        }
-
-// Используем
-        const labels = this.incomesListPercent.map(item => item.category);
-        const data = this.incomesListPercent.map(item => item.percent);
-        const bgColors = generateColors(labels.length);
-        const hoverColors = generateHoverColors(bgColors);
-
-        this.chartConfig.data.labels = labels;
-        this.chartConfig.data.datasets[0].data = data;
-        this.chartConfig.data.datasets[0].backgroundColor = bgColors;
-        this.chartConfig.data.datasets[0].hoverBackgroundColor = hoverColors;
-
-        this.initIncomePie(this.incomesListPercent, this.chartConfig);
-
-
-        //////////////////
-        const dataArray2 = this.expensesListPercent; // Подсказки для this.chartConfig2
-        this.chartConfig2 = {
-            type: 'doughnut',
-            data: {
-                labels: ['Red2', 'Orange2', 'Yellow2', 'Green2', 'Blue2'],
-                datasets: [{
-                    data: [20, 15, 25, 5, 35],
-                    backgroundColor: [
-                        'rgb(255, 0, 0)',
-                        'rgb(255, 165, 0)',
-                        'rgb(255, 255, 0)',
-                        'rgb(0, 128, 0)',
-                        'rgb(0, 0, 255)'
-                    ],
-                    hoverBackgroundColor: [
-                        'rgb(255, 0, 0, 0.6)',
-                        'rgb(255, 165, 0, 0.6)',
-                        'rgb(255, 255, 0, 0.6)',
-                        'rgb(0, 128, 0, 0.6)',
-                        'rgb(0, 0, 255, 0.6)'
-                    ]
-                }]
-            },
-            options: {
-                responsive: true,
-                maintainAspectRatio: false,
-                cutout: '20%', // процент «дырки» (от 0 до 100)
-                animation: {
-                    animateRotate: true,
-                    animateScale: true,
-                    duration: 1500
-                },
-                plugins: {
-                    legend: {
-                        position: 'top',
-                    },
-                    title: {
-                        display: true,
-                        text: 'Расходы'
-                    },
-                    tooltip: {
-                        // Настройка внешнего вида подсказки
-                        backgroundColor: 'rgba(0, 0, 0, 0.8)',
-                        titleColor: '#fff',
-                        bodyColor: '#fff',
-                        borderColor: 'rgba(255, 255, 255, 0.3)',
-                        borderWidth: 1,
-                        padding: 12,
-                        cornerRadius: 8,
-
-                        // Форматирование текста подсказки
-                        callbacks: {
-                            label: function(context) {
-                                const item = dataArray2[context.dataIndex];
-                                return [
-                                    `Категория: ${item.category}`,
-                                    `Сумма: ${item.amount.toLocaleString()} ₽`,
-                                    `Доля: ${item.percent}%`
-                                ];
-                            },
-
-                            // Можно изменить заголовок подсказки
-                            title: function() {
-                                return 'Детализация:';
-                            }
-                        }
-                    }
-                }
-            }
-        };
-
-// // Извлекаем labels и data из this.array
-//         const labels2 = this.expensesListPercent.map(item => item.category);
-//         const data2 = this.expensesListPercent.map(item => item.percent);
-//
-// // Обновляем конфигурацию диаграммы
-//         this.chartConfig2.data.labels = labels2;
-//         this.chartConfig2.data.datasets[0].data = data2;
-//
-//         function generateColors(count) {
-//             const colors = [];
-//             for (let i = 0; i < count; i++) {
-//                 // Равномерно распределяем оттенок по цветовому кругу (0–360°)
-//                 const hue = (i * 360) / count;
-//                 colors.push(`hsl(${hue}, 70%, 60%)`);
-//             }
-//             return colors;
-//         }
-//
-//         function generateHoverColors(colors) {
-//             return colors.map(color =>
-//                 color.replace('hsl', 'hsla').replace(')', ', 0.6)')
-//             );
-//         }
-
-// Используем
-        const labels2 = this.expensesListPercent.map(item => item.category);
-        const data2 = this.expensesListPercent.map(item => item.percent);
-        const bgColors2 = generateColors(labels.length);
-        const hoverColors2 = generateHoverColors(bgColors);
-
-        this.chartConfig2.data.labels = labels2;
-        this.chartConfig2.data.datasets[0].data = data2;
-        this.chartConfig2.data.datasets[0].backgroundColor = bgColors2;
-        this.chartConfig2.data.datasets[0].hoverBackgroundColor = hoverColors2;
-
-
-
-        this.initOutcomePie(this.expensesListPercent, this.chartConfig2);
-
     }
 
-
-    // Вызов инициализации диаграммы
-    initIncomePie() {
-        // alert('1111111111111111111111111111');
-        // console.log('Доходы (ПРОЦЕНТЫ С ОКРУГЛЕНИЕМ ):', this.incomesListPercent);
-        // console.log('Доходы (ПРОЦЕНТЫ С ОКРУГЛЕНИЕМ .length ):', this.incomesListPercent.length);
-        if (!this.incomesListPercent || this.incomesListPercent.length === 0) {
-            // Скрываем диаграмму (например, через CSS)
-            // document.getElementById('main-menu').style.display = 'none';
-            // alert('1111111111111111111111111111');
-            // Либо выводим сообщение
-            document.getElementById('myPieChartText').innerHTML = '<div class="d-flex gap-2 py-2 mt-0 text-center justify-content-center align-items-center my-circle">Нет данных для отображения</div>';
-
-            // Прерываем выполнение
-            return;
-        }
-        // 1. Если диаграмма уже существует — уничтожаем её
-        if (this._pieChartInstance) {
-            this._pieChartInstance.destroy();
-            this._pieChartInstance = null;  // Очищаем ссылку
-        }
-    // Создаём экземпляр диаграммы
-///////////////////////
-
-
-
-        /////////////////////
-        // 2. Создаём новую диаграмму и сохраняем экземпляр
-        this._pieChartInstance = new PieChart('myPieChart', this.chartConfig);
-    }
-
-    initOutcomePie() {
-
-        // console.log('Расходы (ПРОЦЕНТЫ С ОКРУГЛЕНИЕМ ):', this.expensesListPercent);
-        // console.log('Расходы (ПРОЦЕНТЫ С ОКРУГЛЕНИЕМ .length):', this.expensesListPercent.length);
-        if (!this.expensesListPercent || this.expensesListPercent.length === 0) {
-            // Скрываем диаграмму (например, через CSS)
-            // document.getElementById('main-menu').style.display = 'none';
-            // alert('2222222222222222222222222222222');
-            // Либо выводим сообщение
-            document.getElementById('myPieChart2Text').innerHTML = '<div class="d-flex gap-2 py-2 mt-0 text-center justify-content-center align-items-center my-circle">Нет данных для отображения</div>';
-
-            // Прерываем выполнение
-            return;
-        }
-        // 1. Если диаграмма уже существует — уничтожаем её
-        if (this._pieTwoChartInstance) {
-            this._pieTwoChartInstance.destroy();
-            this._pieTwoChartInstance = null;  // Очищаем ссылку
-        }
-        // Создаём экземпляр диаграммы
-///////////////////////
-
-
-
-        /////////////////////
-        // 2. Создаём новую диаграмму и сохраняем экземпляр
-        this._pieTwoChartInstance = new PieChart('myPieChart2', this.chartConfig2);
-
-    }
+    // chooseId(element) {
+    //     console.log(element);
+    //     location.href = '#/edit-income';
+    //     //  location.href = '#/test?name=' + this.routeParams.name + '&lastName=' + this.routeParams.lastName + '&email=' + this.routeParams.email + '&id=' + dataId;
+    //     alert(element);
+    //     sessionStorage.setItem('incomeId', JSON.stringify(element));
+    // }
 }
